@@ -1,0 +1,131 @@
+{
+  "timestamp": "2025-03-16T02:53:41.251896",
+  "tests": {
+    "direct_communication": [
+      {
+        "avg_latency_ms": 1.7030858993530273,
+        "p95_latency_ms": 2.171015739440918,
+        "p99_latency_ms": 2.4295663833618164,
+        "throughput_msgs_per_sec": 587.1694436433785,
+        "total_time_sec": 0.17030858993530273,
+        "message_size_bytes": 128,
+        "num_messages": 100
+      },
+      {
+        "avg_latency_ms": 1.685112476348877,
+        "p95_latency_ms": 2.105379104614258,
+        "p99_latency_ms": 2.246737480163574,
+        "throughput_msgs_per_sec": 593.4321975745464,
+        "total_time_sec": 0.8425562381744385,
+        "message_size_bytes": 128,
+        "num_messages": 500
+      },
+      {
+        "avg_latency_ms": 1.6580748558044434,
+        "p95_latency_ms": 1.9913196563720703,
+        "p99_latency_ms": 2.1547913551330566,
+        "throughput_msgs_per_sec": 603.1090794841303,
+        "total_time_sec": 0.16580748558044434,
+        "message_size_bytes": 1024,
+        "num_messages": 100
+      },
+      {
+        "avg_latency_ms": 1.6613216400146484,
+        "p95_latency_ms": 1.96455717086792,
+        "p99_latency_ms": 2.125880718231201,
+        "throughput_msgs_per_sec": 601.9304004197421,
+        "total_time_sec": 0.8306608200073242,
+        "message_size_bytes": 1024,
+        "num_messages": 500
+      },
+      {
+        "avg_latency_ms": 1.6519880294799805,
+        "p95_latency_ms": 1.7909049987792969,
+        "p99_latency_ms": 2.0883774757385254,
+        "throughput_msgs_per_sec": 605.3312627905567,
+        "total_time_sec": 0.16519880294799805,
+        "message_size_bytes": 10240,
+        "num_messages": 100
+      },
+      {
+        "avg_latency_ms": 1.7062163352966309,
+        "p95_latency_ms": 2.107858657836914,
+        "p99_latency_ms": 2.2320938110351562,
+        "throughput_msgs_per_sec": 586.0921498129644,
+        "total_time_sec": 0.8531081676483154,
+        "message_size_bytes": 10240,
+        "num_messages": 500
+      }
+    ],
+    "multi_agent_orchestration": [
+      {
+        "num_agents": 5,
+        "num_messages": 50,
+        "total_time_sec": 0.003012418746948242,
+        "msgs_per_second": 16597.958053027305
+      },
+      {
+        "num_agents": 10,
+        "num_messages": 50,
+        "total_time_sec": 0.003999948501586914,
+        "msgs_per_second": 12500.160934612863
+      },
+      {
+        "num_agents": 25,
+        "num_messages": 50,
+        "total_time_sec": 0.0065212249755859375,
+        "msgs_per_second": 7667.271131909915
+      },
+      {
+        "num_agents": 50,
+        "num_messages": 50,
+        "total_time_sec": 0.013001203536987305,
+        "msgs_per_second": 3845.7978030844843
+      }
+    ],
+    "complex_workflow": [
+      {
+        "num_agents": 10,
+        "workflow_steps": 3,
+        "avg_workflow_latency_ms": 9.078168869018555,
+        "min_latency_ms": 8.422613143920898,
+        "max_latency_ms": 9.519100189208984
+      },
+      {
+        "num_agents": 10,
+        "workflow_steps": 6,
+        "avg_workflow_latency_ms": 22.48086929321289,
+        "min_latency_ms": 21.187543869018555,
+        "max_latency_ms": 23.94556999206543
+      },
+      {
+        "num_agents": 10,
+        "workflow_steps": 10,
+        "avg_workflow_latency_ms": 39.77916240692139,
+        "min_latency_ms": 38.796186447143555,
+        "max_latency_ms": 42.07324981689453
+      },
+      {
+        "num_agents": 25,
+        "workflow_steps": 3,
+        "avg_workflow_latency_ms": 9.002470970153809,
+        "min_latency_ms": 8.44120979309082,
+        "max_latency_ms": 9.679317474365234
+      },
+      {
+        "num_agents": 25,
+        "workflow_steps": 6,
+        "avg_workflow_latency_ms": 22.98283576965332,
+        "min_latency_ms": 21.821260452270508,
+        "max_latency_ms": 23.680925369262695
+      },
+      {
+        "num_agents": 25,
+        "workflow_steps": 10,
+        "avg_workflow_latency_ms": 40.67065715789795,
+        "min_latency_ms": 39.322614669799805,
+        "max_latency_ms": 41.68891906738281
+      }
+    ]
+  }
+}

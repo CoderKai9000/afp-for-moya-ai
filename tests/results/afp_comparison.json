@@ -1,0 +1,141 @@
+{
+  "timestamp": "2025-03-16T01:38:47.267101",
+  "tests": {
+    "direct_communication": [
+      {
+        "message_size_bytes": 128,
+        "num_messages": 100,
+        "baseline_latency_ms": 4.086039066314697,
+        "afp_latency_ms": 1.735212802886963,
+        "latency_change_percent": -57.53313233855114,
+        "baseline_throughput": 244.7357902776797,
+        "afp_throughput": 576.298191401221,
+        "throughput_change_percent": 135.47769239118935
+      },
+      {
+        "message_size_bytes": 128,
+        "num_messages": 500,
+        "baseline_latency_ms": 4.081915855407715,
+        "afp_latency_ms": 1.7680788040161133,
+        "latency_change_percent": -56.685074689284306,
+        "baseline_throughput": 244.98300195855379,
+        "afp_throughput": 565.5856502145402,
+        "throughput_change_percent": 130.86730332018135
+      },
+      {
+        "message_size_bytes": 1024,
+        "num_messages": 100,
+        "baseline_latency_ms": 4.103884696960449,
+        "afp_latency_ms": 1.699984073638916,
+        "latency_change_percent": -58.576222307171236,
+        "baseline_throughput": 243.6715633703481,
+        "afp_throughput": 588.2408050208618,
+        "throughput_change_percent": 141.40724378528103
+      },
+      {
+        "message_size_bytes": 1024,
+        "num_messages": 500,
+        "baseline_latency_ms": 4.107486724853516,
+        "afp_latency_ms": 1.7484130859375,
+        "latency_change_percent": -57.43350610585715,
+        "baseline_throughput": 243.4578775262293,
+        "afp_throughput": 571.9472177616422,
+        "throughput_change_percent": 134.9265604272848
+      },
+      {
+        "message_size_bytes": 10240,
+        "num_messages": 100,
+        "baseline_latency_ms": 4.088795185089111,
+        "afp_latency_ms": 1.7488312721252441,
+        "latency_change_percent": -57.228689798334074,
+        "baseline_throughput": 244.57082214505834,
+        "afp_throughput": 571.8104518938314,
+        "throughput_change_percent": 133.8015822487127
+      },
+      {
+        "message_size_bytes": 10240,
+        "num_messages": 500,
+        "baseline_latency_ms": 4.080593585968018,
+        "afp_latency_ms": 1.7530641555786133,
+        "latency_change_percent": -57.038991542630114,
+        "baseline_throughput": 245.06238588393393,
+        "afp_throughput": 570.4297796619667,
+        "throughput_change_percent": 132.76921001337706
+      }
+    ],
+    "multi_agent_orchestration": [
+      {
+        "num_agents": 5,
+        "num_messages": 50,
+        "baseline_throughput": 156.87358715540057,
+        "afp_throughput": 16617.686212361332,
+        "throughput_change_percent": 10493.042789223453
+      },
+      {
+        "num_agents": 10,
+        "num_messages": 50,
+        "baseline_throughput": 69.84760536998229,
+        "afp_throughput": 16669.199586678325,
+        "throughput_change_percent": 23765.098163897947
+      },
+      {
+        "num_agents": 25,
+        "num_messages": 50,
+        "baseline_throughput": 26.389221998434127,
+        "afp_throughput": 8329.63418993526,
+        "throughput_change_percent": 31464.531119672723
+      },
+      {
+        "num_agents": 50,
+        "num_messages": 50,
+        "baseline_throughput": 12.970083519552174,
+        "afp_throughput": 5425.30591126633,
+        "throughput_change_percent": 41729.38300349244
+      }
+    ],
+    "complex_workflow": [
+      {
+        "num_agents": 10,
+        "workflow_steps": 3,
+        "baseline_latency_ms": 8.158159255981445,
+        "afp_latency_ms": 8.831334114074707,
+        "latency_change_percent": 8.2515532851323
+      },
+      {
+        "num_agents": 10,
+        "workflow_steps": 6,
+        "baseline_latency_ms": 20.433926582336426,
+        "afp_latency_ms": 22.519588470458984,
+        "latency_change_percent": 10.206858088280764
+      },
+      {
+        "num_agents": 10,
+        "workflow_steps": 10,
+        "baseline_latency_ms": 36.87856197357178,
+        "afp_latency_ms": 40.16215801239014,
+        "latency_change_percent": 8.903807152706978
+      },
+      {
+        "num_agents": 25,
+        "workflow_steps": 3,
+        "baseline_latency_ms": 8.136963844299316,
+        "afp_latency_ms": 9.369206428527832,
+        "latency_change_percent": 15.143763789632834
+      },
+      {
+        "num_agents": 25,
+        "workflow_steps": 6,
+        "baseline_latency_ms": 20.67246437072754,
+        "afp_latency_ms": 22.819876670837402,
+        "latency_change_percent": 10.387790548816353
+      },
+      {
+        "num_agents": 25,
+        "workflow_steps": 10,
+        "baseline_latency_ms": 37.227582931518555,
+        "afp_latency_ms": 41.01994037628174,
+        "latency_change_percent": 10.186955870165834
+      }
+    ]
+  }
+}

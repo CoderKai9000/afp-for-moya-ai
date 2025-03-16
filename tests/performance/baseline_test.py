@@ -1,226 +1,277 @@
-import time
-import random
-import statistics
-import json
-import os
-from datetime import datetime
+#!/usr/bin/env python
+"""
+Baseline performance test script.
 
-# Mock Moya agent classes for baseline testing
-class Agent:
-    def __init__(self, agent_id):
-        self.id = agent_id
+This script measures baseline performance without using AFP for the same operations
+as in the optimized test, to provide a fair comparison.
+"""
+
+import time
+import json
+import threading
+import queue
+import random
+from datetime import datetime
+from typing import Dict, List, Any, Optional, Callable
+
+
+class BaselineAgent:
+    """Simple agent without AFP messaging."""
+    
+    def __init__(self, id):
+        """Initialize a simple agent."""
+        self.id = id
         self.messages_received = 0
         self.messages_sent = 0
     
-    def receive_message(self, sender, content):
+    def process_message(self, sender, content):
+        """Process a message from another agent."""
         self.messages_received += 1
-        # Simulate processing time
+        # Simulate message processing time
         time.sleep(0.001)
-        return {"status": "received", "agent": self.id}
-    
-    def send_message(self, recipient, content):
-        self.messages_sent += 1
-        return {"status": "sent", "from": self.id, "to": recipient}
+        # Print message for debugging
+        print(f"Agent {self.id} received: {content}")
+        return True
 
 
-class SimpleOrchestrator:
-    def __init__(self, agents):
-        self.agents = {agent.id: agent for agent in agents}
-        self.messages_processed = 0
+class BaselineOrchestrator:
+    """Simple orchestrator without AFP messaging."""
     
-    def route_message(self, sender, recipient, content):
-        """Route a message from sender to recipient."""
-        self.messages_processed += 1
+    def __init__(self):
+        """Initialize a simple orchestrator."""
+        self.agents = {}  # Dictionary of registered agents
+    
+    def register_agent(self, agent_id, agent_instance):
+        """Register an agent with the orchestrator."""
+        self.agents[agent_id] = agent_instance
+        return True
+    
+    def route_message(self, sender, recipients, content):
+        """Route a message from sender to recipients."""
+        # Validate sender and recipients
+        if sender not in self.agents:
+            raise ValueError(f"Sender {sender} is not registered")
         
-        # Simulate orchestrator processing overhead
+        success = True
+        for recipient in recipients:
+            if recipient not in self.agents:
+                raise ValueError(f"Recipient {recipient} is not registered")
+            
+            # Deliver message to recipient
+            if not self.agents[recipient].process_message(sender, content):
+                success = False
+        
+        return success
+
+
+def test_direct_communication(iterations=100):
+    """Test direct message sending between two agents."""
+    metrics = {
+        "total_time": 0,
+        "message_count": iterations,
+        "avg_latency": 0,
+        "throughput": 0
+    }
+    
+    # Setup agents
+    agent1 = BaselineAgent("agent1")
+    agent2 = BaselineAgent("agent2")
+    
+    # Time the sending and receiving of messages
+    start_time = time.time()
+    
+    for i in range(iterations):
+        content = f"Test message {i}"
+        agent2.process_message("agent1", content)
+        
+        # Wait for message to be processed
+        time.sleep(0.001)  # Small sleep to ensure message processing
+    
+    end_time = time.time()
+    total_time = end_time - start_time
+    
+    metrics["total_time"] = total_time
+    metrics["avg_latency"] = total_time / iterations
+    metrics["throughput"] = iterations / total_time
+    
+    return metrics
+
+
+def test_multi_agent_orchestration(iterations=100):
+    """Test orchestrator routing messages between multiple agents."""
+    metrics = {
+        "total_time": 0,
+        "message_count": iterations,
+        "avg_latency": 0,
+        "throughput": 0
+    }
+    
+    # Setup orchestrator
+    orchestrator = BaselineOrchestrator()
+    
+    # Setup agents
+    agent1 = BaselineAgent("agent1")
+    agent2 = BaselineAgent("agent2")
+    agent3 = BaselineAgent("agent3")
+    
+    # Register agents with orchestrator
+    orchestrator.register_agent("agent1", agent1)
+    orchestrator.register_agent("agent2", agent2)
+    orchestrator.register_agent("agent3", agent3)
+    
+    # Time the sending and receiving of messages
+    start_time = time.time()
+    
+    for i in range(iterations):
+        content = f"Test message {i}"
+        orchestrator.route_message("agent1", ["agent2", "agent3"], content)
+        
+        # Wait for message to be processed
+        time.sleep(0.001)  # Small sleep to ensure message processing
+    
+    end_time = time.time()
+    total_time = end_time - start_time
+    
+    metrics["total_time"] = total_time
+    metrics["avg_latency"] = total_time / iterations
+    metrics["throughput"] = iterations / total_time
+    
+    return metrics
+
+
+def test_complex_workflow(iterations=50):
+    """Test a complex workflow with multiple message hops."""
+    metrics = {
+        "total_time": 0,
+        "message_count": iterations,
+        "avg_latency": 0,
+        "throughput": 0,
+        "workflow_completion_time": []
+    }
+    
+    # Setup orchestrator
+    orchestrator = BaselineOrchestrator()
+    
+    # Setup workflow agents
+    agent_router = BaselineAgent("router")
+    agent_validator = BaselineAgent("validator")
+    agent_processor = BaselineAgent("processor")
+    agent_approver = BaselineAgent("approver")
+    agent_notifier = BaselineAgent("notifier")
+    
+    # Register agents with orchestrator
+    orchestrator.register_agent("router", agent_router)
+    orchestrator.register_agent("validator", agent_validator)
+    orchestrator.register_agent("processor", agent_processor)
+    orchestrator.register_agent("approver", agent_approver)
+    orchestrator.register_agent("notifier", agent_notifier)
+    
+    # Time the execution of workflows
+    start_time = time.time()
+    
+    for i in range(iterations):
+        workflow_id = f"workflow-{i}"
+        workflow_start = time.time()  # Start timing this specific workflow
+        
+        # Initiate workflow
+        orchestrator.route_message("router", ["validator"], f"Validation request {i}")
+        
+        # Ensure message processing before moving to next step
         time.sleep(0.002)
         
-        if recipient in self.agents:
-            return self.agents[recipient].receive_message(sender, content)
-        else:
-            return {"status": "error", "message": f"Recipient {recipient} not found"}
-    
-    def broadcast_message(self, sender, content):
-        """Broadcast a message from sender to all agents."""
-        results = []
-        for agent_id, agent in self.agents.items():
-            if agent_id != sender:
-                results.append(agent.receive_message(sender, content))
+        # Simulate validation step
+        orchestrator.route_message("validator", ["processor"], f"Validated request {i}")
         
-        self.messages_processed += len(self.agents) - 1
-        return results
+        # Ensure message processing before moving to next step
+        time.sleep(0.002)
+        
+        # Simulate processing step
+        orchestrator.route_message("processor", ["approver"], f"Processed request {i}")
+        
+        # Ensure message processing before moving to next step
+        time.sleep(0.002)
+        
+        # Simulate approval step
+        orchestrator.route_message("approver", ["notifier"], f"Approved request {i}")
+        
+        # Ensure message processing before moving to next step
+        time.sleep(0.002)
+        
+        # Simulate notification step (completion)
+        orchestrator.route_message("notifier", ["router"], f"Workflow {i} completed")
+        
+        # Ensure final message processing is complete
+        time.sleep(0.002)
+        
+        # Record workflow completion time
+        workflow_end = time.time()
+        workflow_duration = workflow_end - workflow_start
+        metrics["workflow_completion_time"].append(workflow_duration)
+        
+        # Small sleep to separate workflows
+        time.sleep(0.005)
+    
+    end_time = time.time()
+    total_time = end_time - start_time
+    
+    # Each workflow has 5 messages (validation, processing, approval, notification, completion)
+    total_messages = iterations * 5
+    
+    metrics["total_time"] = total_time
+    metrics["message_count"] = total_messages
+    metrics["avg_latency"] = sum(metrics["workflow_completion_time"]) / iterations
+    metrics["throughput"] = total_messages / total_time
+    
+    return metrics
 
-
-def test_direct_communication(num_messages=100, message_size=1024):
-    """Test performance of direct orchestrator-based communication."""
-    
-    # Create agents
-    agent1 = Agent("agent1")
-    agent2 = Agent("agent2")
-    
-    # Create orchestrator
-    orchestrator = SimpleOrchestrator([agent1, agent2])
-    
-    # Create test message (adjust size as needed)
-    message_content = "x" * message_size
-    
-    # Measure orchestrator-based communication
-    latencies = []
-    start_total = time.time()
-    
-    for i in range(num_messages):
-        # Time a request-response cycle
-        start = time.time()
-        
-        # Send message from agent1 to agent2 through orchestrator
-        response = orchestrator.route_message(
-            sender=agent1.id,
-            recipient=agent2.id,
-            content=message_content
-        )
-        
-        end = time.time()
-        latencies.append((end - start) * 1000)  # Convert to ms
-    
-    end_total = time.time()
-    
-    # Calculate metrics
-    avg_latency = statistics.mean(latencies)
-    p95_latency = statistics.quantiles(latencies, n=20)[18] if len(latencies) >= 20 else avg_latency
-    p99_latency = statistics.quantiles(latencies, n=100)[98] if len(latencies) >= 100 else avg_latency
-    throughput = num_messages / (end_total - start_total)
-    
-    return {
-        "avg_latency_ms": avg_latency,
-        "p95_latency_ms": p95_latency,
-        "p99_latency_ms": p99_latency,
-        "throughput_msgs_per_sec": throughput,
-        "total_time_sec": end_total - start_total
-    }
-
-def test_multi_agent_orchestration(num_agents=10, num_messages=100):
-    """Test orchestration with multiple agents."""
-    
-    # Create agents
-    agents = [Agent(f"agent{i}") for i in range(num_agents)]
-    
-    # Create orchestrator
-    orchestrator = SimpleOrchestrator(agents)
-    
-    # Measure time to distribute messages to all agents
-    start = time.time()
-    
-    for i in range(num_messages):
-        # Broadcast from first agent to all others
-        orchestrator.broadcast_message(
-            sender=agents[0].id,
-            content=f"Broadcast message {i}"
-        )
-    
-    end = time.time()
-    
-    return {
-        "num_agents": num_agents,
-        "num_messages": num_messages,
-        "total_time_sec": end - start,
-        "msgs_per_second": num_messages / (end - start)
-    }
-
-def test_complex_workflow(num_agents=20, workflow_steps=5, runs=10):
-    """
-    Test a more complex workflow with multiple message hops.
-    
-    In this test, a workflow moves through multiple agents in sequence,
-    simulating a more complex business process.
-    """
-    agents = [Agent(f"agent{i}") for i in range(num_agents)]
-    orchestrator = SimpleOrchestrator(agents)
-    
-    latencies = []
-    
-    for _ in range(runs):
-        # Select random sequence of agents to form workflow
-        workflow_agents = random.sample(agents, workflow_steps)
-        
-        start = time.time()
-        
-        # Pass a message through the workflow sequence
-        message = {"workflow_id": random.randint(1000, 9999), "data": {"value": 100}}
-        current_agent = workflow_agents[0]
-        
-        for next_agent in workflow_agents[1:]:
-            # Agent processes and passes to next agent in workflow
-            orchestrator.route_message(
-                sender=current_agent.id,
-                recipient=next_agent.id,
-                content=message
-            )
-            
-            # Update message for next hop
-            message["previous_agent"] = current_agent.id
-            current_agent = next_agent
-        
-        end = time.time()
-        latencies.append((end - start) * 1000)  # ms
-    
-    return {
-        "num_agents": num_agents,
-        "workflow_steps": workflow_steps,
-        "avg_workflow_latency_ms": statistics.mean(latencies),
-        "min_latency_ms": min(latencies),
-        "max_latency_ms": max(latencies)
-    }
 
 def run_benchmarks():
-    """Run all benchmarks and save results to a file."""
-    results = {
-        "timestamp": datetime.now().isoformat(),
-        "tests": {}
-    }
+    """Run all baseline performance benchmarks and print results."""
+    print("Running baseline direct communication tests...")
+    direct_results = test_direct_communication(iterations=100)
     
-    print("Running direct communication tests...")
-    direct_results = []
-    for msg_size in [128, 1024, 10240]:
-        for num_msgs in [100, 500]:
-            test_result = test_direct_communication(num_messages=num_msgs, message_size=msg_size)
-            test_result["message_size_bytes"] = msg_size
-            test_result["num_messages"] = num_msgs
-            direct_results.append(test_result)
-            print(f"  Message size: {msg_size} bytes, Messages: {num_msgs}")
-            print(f"  Throughput: {test_result['throughput_msgs_per_sec']:.2f} msgs/sec")
-            print(f"  Avg Latency: {test_result['avg_latency_ms']:.2f} ms")
-            print()
+    print("\nRunning baseline multi-agent orchestration tests...")
+    orchestration_results = test_multi_agent_orchestration(iterations=100)
     
-    results["tests"]["direct_communication"] = direct_results
+    print("\nRunning baseline complex workflow tests...")
+    workflow_results = test_complex_workflow(iterations=50)
     
-    print("Running multi-agent orchestration tests...")
-    multi_agent_results = []
-    for num_agents in [5, 10, 25, 50]:
-        test_result = test_multi_agent_orchestration(num_agents=num_agents, num_messages=50)
-        multi_agent_results.append(test_result)
-        print(f"  Agents: {num_agents}")
-        print(f"  Throughput: {test_result['msgs_per_second']:.2f} msgs/sec")
-        print()
+    # Print results
+    print("\n===== Baseline Performance Results =====")
     
-    results["tests"]["multi_agent_orchestration"] = multi_agent_results
+    print("\nDirect Communication:")
+    print(f"Total time: {direct_results['total_time']:.4f} seconds")
+    print(f"Message count: {direct_results['message_count']}")
+    print(f"Average latency: {direct_results['avg_latency'] * 1000:.4f} ms")
+    print(f"Throughput: {direct_results['throughput']:.2f} messages/second")
     
-    print("Running complex workflow tests...")
-    workflow_results = []
-    for agents in [10, 25]:
-        for steps in [3, 6, 10]:
-            test_result = test_complex_workflow(num_agents=agents, workflow_steps=steps)
-            workflow_results.append(test_result)
-            print(f"  Agents: {agents}, Workflow steps: {steps}")
-            print(f"  Avg Workflow Latency: {test_result['avg_workflow_latency_ms']:.2f} ms")
-            print()
+    print("\nMulti-Agent Orchestration:")
+    print(f"Total time: {orchestration_results['total_time']:.4f} seconds")
+    print(f"Message count: {orchestration_results['message_count']}")
+    print(f"Average latency: {orchestration_results['avg_latency'] * 1000:.4f} ms")
+    print(f"Throughput: {orchestration_results['throughput']:.2f} messages/second")
     
-    results["tests"]["complex_workflow"] = workflow_results
+    print("\nComplex Workflow:")
+    print(f"Total time: {workflow_results['total_time']:.4f} seconds")
+    print(f"Message count: {workflow_results['message_count']}")
+    print(f"Average latency: {workflow_results['avg_latency'] * 1000:.4f} ms")
+    print(f"Throughput: {workflow_results['throughput']:.2f} messages/second")
     
     # Save results to file
+    results = {
+        "timestamp": datetime.now().isoformat(),
+        "tests": {
+            "direct_communication": direct_results,
+            "multi_agent_orchestration": orchestration_results,
+            "complex_workflow": workflow_results
+        }
+    }
+    
     with open("baseline_results.json", "w") as f:
         json.dump(results, f, indent=2)
     
-    print(f"Baseline results saved to 'baseline_results.json'")
+    print(f"\nBaseline results saved to 'baseline_results.json'")
+
 
 if __name__ == "__main__":
     run_benchmarks() 

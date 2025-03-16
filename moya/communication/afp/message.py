@@ -46,12 +46,19 @@ class AFPMessage:
     timestamp: float = field(default_factory=time.time)
     ttl: Optional[int] = None  # Time-to-live in seconds
     trace_path: List[str] = field(default_factory=list)
+    priority: int = 0  # Message priority (0-10, higher values indicate higher priority)
     
     def __post_init__(self):
         """Validate message after initialization."""
         # Add sender to trace path if not already present
         if not self.trace_path or self.trace_path[-1] != self.sender:
             self.trace_path.append(self.sender)
+        
+        # Ensure priority is within valid range
+        if self.priority < 0:
+            self.priority = 0
+        elif self.priority > 10:
+            self.priority = 10
     
     def is_broadcast(self) -> bool:
         """Check if this message is a broadcast (sent to all agents)."""

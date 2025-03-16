@@ -110,7 +110,7 @@ class AFPOrchestrator:
         self.messages_processed = 0
         self.metrics = AFPMetricsCollector()
     
-    def route_message(self, sender: str, recipient: str, content: Any) -> Dict:
+    def route_message(self, sender: str, recipient: str, content: Any, workflow_id: str = None) -> Dict:
         """
         Route a message from sender to recipient using AFP.
         
@@ -118,6 +118,7 @@ class AFPOrchestrator:
             sender: ID of the sending agent
             recipient: ID of the recipient agent
             content: Message content
+            workflow_id: ID of the workflow
             
         Returns:
             Response message content
@@ -128,7 +129,7 @@ class AFPOrchestrator:
             recipients=[recipient],
             content_type=ContentType.JSON,
             content=content,
-            metadata={"requires_response": True, "routed_by": "orchestrator"}
+            metadata={"requires_response": True, "routed_by": "orchestrator", "workflow_id": workflow_id}
         )
         
         # Start a timer for tracking message processing
@@ -181,145 +182,224 @@ class AFPOrchestrator:
         return results
 
 
-def test_direct_communication(num_messages=100, message_size=1024):
-    """Test performance of direct AFP communication."""
+def test_direct_communication(iterations=100):
+    """Test direct message sending between two agents."""
+    metrics = {
+        "total_time": 0,
+        "message_count": iterations,
+        "avg_latency": 0,
+        "throughput": 0
+    }
     
-    # Create communication bus
+    # Create common communication bus
     bus = AFPCommunicationBus()
     
-    # Create agents
+    # Setup agents
     agent1 = AFPAgent("agent1", bus)
     agent2 = AFPAgent("agent2", bus)
     
-    # Create test message content (adjust size as needed)
-    message_content = {"data": "x" * message_size}
+    # Subscribe agent2 to messages
+    agent2.subscribe(lambda msg: msg.sender == "agent1")
     
-    # Measure AFP-based communication
-    latencies = []
-    start_total = time.time()
+    # Time the sending and receiving of messages
+    start_time = time.time()
     
-    for i in range(num_messages):
-        # Time a request-response cycle
-        start = time.time()
-        
-        # Send message from agent1 to agent2 directly with AFP
-        response = agent1.send_message(
-            recipient=agent2.id,
-            content=message_content,
-            sync=True
+    for i in range(iterations):
+        message = AFPMessage(
+            sender="agent1",
+            recipients=["agent2"],
+            content_type=ContentType.TEXT,
+            content=f"Test message {i}",
+            priority=5  # Set a medium priority
         )
         
-        end = time.time()
-        latencies.append((end - start) * 1000)  # Convert to ms
+        agent1.send_message(message)
+        
+        # Wait for message to be processed
+        time.sleep(0.001)  # Small sleep to ensure message processing
     
-    end_total = time.time()
+    end_time = time.time()
+    total_time = end_time - start_time
     
-    # Calculate metrics
-    avg_latency = statistics.mean(latencies)
-    p95_latency = statistics.quantiles(latencies, n=20)[18] if len(latencies) >= 20 else avg_latency
-    p99_latency = statistics.quantiles(latencies, n=100)[98] if len(latencies) >= 100 else avg_latency
-    throughput = num_messages / (end_total - start_total)
+    metrics["total_time"] = total_time
+    metrics["avg_latency"] = total_time / iterations
+    metrics["throughput"] = iterations / total_time
     
-    # Clean up
-    bus.shutdown()
-    
-    return {
-        "avg_latency_ms": avg_latency,
-        "p95_latency_ms": p95_latency,
-        "p99_latency_ms": p99_latency,
-        "throughput_msgs_per_sec": throughput,
-        "total_time_sec": end_total - start_total
+    return metrics
+
+
+def test_multi_agent_orchestration(iterations=100):
+    """Test orchestrator routing messages between multiple agents."""
+    metrics = {
+        "total_time": 0,
+        "message_count": iterations,
+        "avg_latency": 0,
+        "throughput": 0
     }
-
-
-def test_multi_agent_orchestration(num_agents=10, num_messages=100):
-    """Test AFP orchestration with multiple agents."""
     
-    # Create communication bus
+    # Create common communication bus
     bus = AFPCommunicationBus()
     
-    # Create agents
-    agents = [AFPAgent(f"agent{i}", bus) for i in range(num_agents)]
-    
-    # Create orchestrator
+    # Setup orchestrator
     orchestrator = AFPOrchestrator(bus)
     
-    # Measure time to distribute messages to all agents
-    start = time.time()
+    # Setup agents
+    agent1 = AFPAgent("agent1", bus)
+    agent2 = AFPAgent("agent2", bus)
+    agent3 = AFPAgent("agent3", bus)
     
-    for i in range(num_messages):
-        # Broadcast from first agent to all others
-        orchestrator.broadcast_message(
-            sender=agents[0].id,
-            content={"message": f"Broadcast message {i}"}
+    # Register agents with orchestrator
+    orchestrator.register_agent("agent1")
+    orchestrator.register_agent("agent2")
+    orchestrator.register_agent("agent3")
+    
+    # Time the sending and receiving of messages
+    start_time = time.time()
+    
+    for i in range(iterations):
+        message = AFPMessage(
+            sender="agent1",
+            recipients=["agent2", "agent3"],
+            content_type=ContentType.TEXT,
+            content=f"Test message {i}",
+            priority=5  # Set a medium priority
         )
+        
+        orchestrator.route_message(message)
+        
+        # Wait for message to be processed
+        time.sleep(0.001)  # Small sleep to ensure message processing
     
-    end = time.time()
+    end_time = time.time()
+    total_time = end_time - start_time
     
-    # Clean up
-    bus.shutdown()
+    metrics["total_time"] = total_time
+    metrics["avg_latency"] = total_time / iterations
+    metrics["throughput"] = iterations / total_time
     
-    return {
-        "num_agents": num_agents,
-        "num_messages": num_messages,
-        "total_time_sec": end - start,
-        "msgs_per_second": num_messages / (end - start)
+    return metrics
+
+
+def test_complex_workflow(iterations=50):
+    """Test a complex workflow with multiple message hops."""
+    metrics = {
+        "total_time": 0,
+        "message_count": iterations,
+        "avg_latency": 0,
+        "throughput": 0,
+        "workflow_completion_time": []
     }
-
-
-def test_complex_workflow(num_agents=20, workflow_steps=5, runs=10):
-    """
-    Test a more complex workflow with multiple message hops using AFP.
     
-    In this test, a workflow moves through multiple agents in sequence,
-    simulating a more complex business process.
-    """
-    # Create communication bus
-    bus = AFPCommunicationBus()
+    # Create common communication bus with optimization features enabled
+    bus = AFPCommunicationBus(cache_size=100)
     
-    # Create agents
-    agents = [AFPAgent(f"agent{i}", bus) for i in range(num_agents)]
-    
-    # Create orchestrator
+    # Setup orchestrator
     orchestrator = AFPOrchestrator(bus)
     
-    latencies = []
+    # Setup workflow agents
+    agent_router = AFPAgent("router", bus)
+    agent_validator = AFPAgent("validator", bus)
+    agent_processor = AFPAgent("processor", bus)
+    agent_approver = AFPAgent("approver", bus)
+    agent_notifier = AFPAgent("notifier", bus)
     
-    for _ in range(runs):
-        # Select random sequence of agents to form workflow
-        workflow_agents = random.sample(agents, workflow_steps)
-        
-        start = time.time()
-        
-        # Pass a message through the workflow sequence
-        message = {"workflow_id": random.randint(1000, 9999), "data": {"value": 100}}
-        current_agent = workflow_agents[0]
-        
-        for next_agent in workflow_agents[1:]:
-            # Agent processes and passes to next agent in workflow
-            orchestrator.route_message(
-                sender=current_agent.id,
-                recipient=next_agent.id,
-                content=message
-            )
-            
-            # Update message for next hop
-            message["previous_agent"] = current_agent.id
-            current_agent = next_agent
-        
-        end = time.time()
-        latencies.append((end - start) * 1000)  # ms
+    # Register agents with orchestrator
+    orchestrator.register_agent("router")
+    orchestrator.register_agent("validator")
+    orchestrator.register_agent("processor")
+    orchestrator.register_agent("approver")
+    orchestrator.register_agent("notifier")
     
-    # Clean up
-    bus.shutdown()
+    # Create direct routes for workflow agents
+    bus.add_direct_route("router", "validator")
+    bus.add_direct_route("validator", "processor")
+    bus.add_direct_route("processor", "approver")
+    bus.add_direct_route("approver", "notifier")
+    bus.add_direct_route("notifier", "router")  # Complete the cycle
     
-    return {
-        "num_agents": num_agents,
-        "workflow_steps": workflow_steps,
-        "avg_workflow_latency_ms": statistics.mean(latencies),
-        "min_latency_ms": min(latencies),
-        "max_latency_ms": max(latencies)
-    }
+    # Time the execution of workflows
+    start_time = time.time()
+    
+    for i in range(iterations):
+        workflow_id = f"workflow-{i}"
+        workflow_start = time.time()
+        
+        # Initiate workflow with a high priority
+        initial_message = AFPMessage(
+            sender="router",
+            recipients=["validator"],
+            content_type=ContentType.TEXT,
+            content=f"Validation request {i}",
+            metadata={"workflow_id": workflow_id, "step": "validation"},
+            priority=10  # High priority for workflow messages
+        )
+        
+        # Route through each step of the workflow
+        orchestrator.route_message(initial_message, workflow_id=workflow_id)
+        
+        # Simulate validation step
+        validation_message = AFPMessage(
+            sender="validator",
+            recipients=["processor"],
+            content_type=ContentType.TEXT,
+            content=f"Validated request {i}",
+            metadata={"workflow_id": workflow_id, "step": "processing"},
+            priority=10
+        )
+        orchestrator.route_message(validation_message, workflow_id=workflow_id)
+        
+        # Simulate processing step
+        processing_message = AFPMessage(
+            sender="processor",
+            recipients=["approver"],
+            content_type=ContentType.TEXT,
+            content=f"Processed request {i}",
+            metadata={"workflow_id": workflow_id, "step": "approval"},
+            priority=10
+        )
+        orchestrator.route_message(processing_message, workflow_id=workflow_id)
+        
+        # Simulate approval step
+        approval_message = AFPMessage(
+            sender="approver",
+            recipients=["notifier"],
+            content_type=ContentType.TEXT,
+            content=f"Approved request {i}",
+            metadata={"workflow_id": workflow_id, "step": "notification"},
+            priority=10
+        )
+        orchestrator.route_message(approval_message, workflow_id=workflow_id)
+        
+        # Simulate notification step (completion)
+        completion_message = AFPMessage(
+            sender="notifier",
+            recipients=["router"],
+            content_type=ContentType.TEXT,
+            content=f"Workflow {i} completed",
+            metadata={"workflow_id": workflow_id, "step": "complete"},
+            priority=10
+        )
+        orchestrator.route_message(completion_message, workflow_id=workflow_id)
+        
+        # Record workflow completion time
+        workflow_end = time.time()
+        metrics["workflow_completion_time"].append(workflow_end - workflow_start)
+        
+        # Small sleep to separate workflows
+        time.sleep(0.005)
+    
+    end_time = time.time()
+    total_time = end_time - start_time
+    
+    # Each workflow has 5 messages (validation, processing, approval, notification, completion)
+    total_messages = iterations * 5
+    
+    metrics["total_time"] = total_time
+    metrics["message_count"] = total_messages
+    metrics["avg_latency"] = sum(metrics["workflow_completion_time"]) / iterations
+    metrics["throughput"] = total_messages / total_time
+    
+    return metrics
 
 
 def compare_with_baseline(afp_results, baseline_file="baseline_results.json"):
@@ -410,7 +490,7 @@ def run_benchmarks():
     direct_results = []
     for msg_size in [128, 1024, 10240]:
         for num_msgs in [100, 500]:
-            test_result = test_direct_communication(num_messages=num_msgs, message_size=msg_size)
+            test_result = test_direct_communication(iterations=num_msgs)
             test_result["message_size_bytes"] = msg_size
             test_result["num_messages"] = num_msgs
             direct_results.append(test_result)

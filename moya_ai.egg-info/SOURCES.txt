@@ -17,6 +17,12 @@ moya/agents/afp/config.py
 moya/classifiers/base_classifier.py
 moya/classifiers/llm_classifier.py
 moya/communication/__init__.py
+moya/communication/afp/__init__.py
+moya/communication/afp/bus.py
+moya/communication/afp/exceptions.py
+moya/communication/afp/message.py
+moya/communication/afp/orchestrator.py
+moya/communication/afp/subscription.py
 moya/conversation/__init__.py
 moya/conversation/message.py
 moya/conversation/thread.py

@@ -1,0 +1,158 @@
+{
+  "nodes": [
+    {
+      "id": "user",
+      "data": {
+        "type": "entity",
+        "last_updated": 1742103086.8122413
+      }
+    },
+    {
+      "id": "english_agent",
+      "data": {
+        "type": "entity",
+        "last_updated": 1742103086.8122466
+      }
+    },
+    {
+      "id": "chandramouli",
+      "data": {
+        "type": "entity",
+        "last_updated": 1742103190.5929086
+      }
+    },
+    {
+      "id": "iiit hyderabad",
+      "data": {
+        "type": "entity",
+        "last_updated": 1742103137.2417545
+      }
+    },
+    {
+      "id": "csd branch",
+      "data": {
+        "type": "entity",
+        "last_updated": 1742103115.8810568
+      }
+    },
+    {
+      "id": "computer science and engineering (csd",
+      "data": {
+        "type": "entity",
+        "last_updated": 1742103137.241741
+      }
+    },
+    {
+      "id": "joke_agent",
+      "data": {
+        "type": "entity",
+        "last_updated": 1742103190.5929363
+      }
+    },
+    {
+      "id": "joke",
+      "data": {
+        "type": "entity",
+        "last_updated": 1742103190.5929508
+      }
+    },
+    {
+      "id": "penguins",
+      "data": {
+        "type": "entity",
+        "last_updated": 1742103190.5929577
+      }
+    },
+    {
+      "id": "breaking the ice hard",
+      "data": {
+        "type": "entity",
+        "last_updated": 1742103190.5929587
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "user",
+      "target": "english_agent",
+      "data": {
+        "relations": [
+          "greet",
+          "interacts_with"
+        ],
+        "last_updated": 1742103086.8122509
+      }
+    },
+    {
+      "source": "chandramouli",
+      "target": "iiit hyderabad",
+      "data": {
+        "relations": [
+          "studying in",
+          "is studying at"
+        ],
+        "last_updated": 1742103137.2417574
+      }
+    },
+    {
+      "source": "chandramouli",
+      "target": "csd branch",
+      "data": {
+        "relations": [
+          "studying in"
+        ],
+        "last_updated": 1742103115.8810592
+      }
+    },
+    {
+      "source": "chandramouli",
+      "target": "computer science and engineering (csd",
+      "data": {
+        "relations": [
+          "is studying in"
+        ],
+        "last_updated": 1742103137.2417495
+      }
+    },
+    {
+      "source": "chandramouli",
+      "target": "joke_agent",
+      "data": {
+        "relations": [
+          "asks"
+        ],
+        "last_updated": 1742103190.5929265
+      }
+    },
+    {
+      "source": "joke_agent",
+      "target": "joke",
+      "data": {
+        "relations": [
+          "tells"
+        ],
+        "last_updated": 1742103190.5929458
+      }
+    },
+    {
+      "source": "joke",
+      "target": "penguins",
+      "data": {
+        "relations": [
+          "about"
+        ],
+        "last_updated": 1742103190.5929546
+      }
+    },
+    {
+      "source": "penguins",
+      "target": "breaking the ice hard",
+      "data": {
+        "relations": [
+          "find"
+        ],
+        "last_updated": 1742103190.5929613
+      }
+    }
+  ]
+}

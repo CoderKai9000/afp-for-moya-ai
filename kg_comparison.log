@@ -1,0 +1,180 @@
+2025-03-16 09:25:06,526 [WARNING] kg_comparison: Could not import real Moya components. Using mock classes instead.
+2025-03-16 09:25:06,526 [WARNING] kg_comparison: Skipping Knowledge Graph imports since base components are not available.
+2025-03-16 09:25:25,915 [WARNING] kg_comparison: Could not import real Moya components. Using mock classes instead.
+2025-03-16 09:25:25,916 [WARNING] kg_comparison: Skipping Knowledge Graph imports since base components are not available.
+2025-03-16 09:25:25,923 [INFO] kg_comparison: Initialized directories: kg_comparison_results
+2025-03-16 09:25:25,924 [INFO] kg_comparison: Creating standard AFP orchestrator
+2025-03-16 09:25:25,925 [INFO] kg_comparison: Creating agents for AFP orchestrator
+2025-03-16 09:26:11,478 [WARNING] kg_comparison: Could not import real Moya components. Using mock classes instead.
+2025-03-16 09:26:11,479 [WARNING] kg_comparison: Skipping Knowledge Graph imports since base components are not available.
+2025-03-16 09:26:11,488 [INFO] kg_comparison: Initialized directories: kg_comparison_results
+2025-03-16 09:26:11,488 [INFO] kg_comparison: Creating standard AFP orchestrator
+2025-03-16 09:26:11,488 [INFO] kg_comparison: Creating agents for AFP orchestrator
+2025-03-16 09:26:11,488 [INFO] kg_comparison: Creating knowledge graph enhanced AFP orchestrator
+2025-03-16 09:26:11,488 [WARNING] kg_comparison: Knowledge Graph components not available. Creating mock KG orchestrator.
+2025-03-16 09:26:11,488 [INFO] kg_comparison: Creating standard AFP orchestrator
+2025-03-16 09:26:11,488 [INFO] kg_comparison: Creating agents for AFP orchestrator
+2025-03-16 09:26:11,488 [INFO] kg_comparison: AFP Initialized - Standard: Real, KG-Enhanced: Real
+2025-03-16 09:26:11,489 [INFO] kg_comparison: KG Optimizations: Disabled, Enhanced Extraction: Disabled
+2025-03-16 09:26:11,489 [INFO] kg_comparison: Running benchmark with 3 queries, 2 runs per query
+2025-03-16 09:26:11,489 [INFO] kg_comparison: Starting benchmark with 2 runs per query
+2025-03-16 09:26:11,489 [INFO] kg_comparison: Running benchmark for query 1/3: Tell me about Microsoft Azure and its main service...
+2025-03-16 09:26:11,489 [INFO] kg_comparison:   Run 1/2
+2025-03-16 09:26:12,090 [INFO] kg_comparison:   Standard AFP: 0.6016s total, 0.1012s overhead
+2025-03-16 09:26:12,892 [INFO] kg_comparison:   KG AFP: 0.8016s total, 0.3012s overhead
+2025-03-16 09:26:13,892 [INFO] kg_comparison:   Run 2/2
+2025-03-16 09:26:14,494 [INFO] kg_comparison:   Standard AFP: 0.6014s total, 0.1009s overhead
+2025-03-16 09:26:15,296 [INFO] kg_comparison:   KG AFP: 0.8023s total, 0.3018s overhead
+2025-03-16 09:26:15,297 [INFO] kg_comparison: Query 1 summary:
+2025-03-16 09:26:15,297 [INFO] kg_comparison:   Standard AFP avg: 0.6015s total, 0.1010s overhead
+2025-03-16 09:26:15,297 [INFO] kg_comparison:   KG AFP avg: 0.8020s total, 0.3015s overhead
+2025-03-16 09:26:15,297 [INFO] kg_comparison: Running benchmark for query 2/3: How do neural networks work? Explain the concept o...
+2025-03-16 09:26:15,297 [INFO] kg_comparison:   Run 1/2
+2025-03-16 09:26:15,898 [INFO] kg_comparison:   Standard AFP: 0.6006s total, 0.1003s overhead
+2025-03-16 09:26:16,701 [INFO] kg_comparison:   KG AFP: 0.8026s total, 0.3021s overhead
+2025-03-16 09:26:17,702 [INFO] kg_comparison:   Run 2/2
+2025-03-16 09:26:18,304 [INFO] kg_comparison:   Standard AFP: 0.6015s total, 0.1012s overhead
+2025-03-16 09:26:19,105 [INFO] kg_comparison:   KG AFP: 0.8016s total, 0.3012s overhead
+2025-03-16 09:26:19,105 [INFO] kg_comparison: Query 2 summary:
+2025-03-16 09:26:19,106 [INFO] kg_comparison:   Standard AFP avg: 0.6010s total, 0.1008s overhead
+2025-03-16 09:26:19,106 [INFO] kg_comparison:   KG AFP avg: 0.8021s total, 0.3016s overhead
+2025-03-16 09:26:19,106 [INFO] kg_comparison: Running benchmark for query 3/3: What are the key differences between Python and Ja...
+2025-03-16 09:26:19,107 [INFO] kg_comparison:   Run 1/2
+2025-03-16 09:26:19,708 [INFO] kg_comparison:   Standard AFP: 0.6011s total, 0.1006s overhead
+2025-03-16 09:26:20,512 [INFO] kg_comparison:   KG AFP: 0.8034s total, 0.3019s overhead
+2025-03-16 09:26:21,513 [INFO] kg_comparison:   Run 2/2
+2025-03-16 09:26:22,114 [INFO] kg_comparison:   Standard AFP: 0.6010s total, 0.1008s overhead
+2025-03-16 09:26:22,916 [INFO] kg_comparison:   KG AFP: 0.8022s total, 0.3016s overhead
+2025-03-16 09:26:22,917 [INFO] kg_comparison: Query 3 summary:
+2025-03-16 09:26:22,917 [INFO] kg_comparison:   Standard AFP avg: 0.6011s total, 0.1007s overhead
+2025-03-16 09:26:22,918 [INFO] kg_comparison:   KG AFP avg: 0.8028s total, 0.3018s overhead
+2025-03-16 09:26:30,074 [WARNING] kg_comparison: Could not import real Moya components. Using mock classes instead.
+2025-03-16 09:26:30,074 [WARNING] kg_comparison: Skipping Knowledge Graph imports since base components are not available.
+2025-03-16 09:26:30,082 [INFO] kg_comparison: Initialized directories: kg_comparison_results
+2025-03-16 09:26:30,082 [INFO] kg_comparison: Creating standard AFP orchestrator
+2025-03-16 09:26:30,082 [INFO] kg_comparison: Creating agents for AFP orchestrator
+2025-03-16 09:26:30,082 [INFO] kg_comparison: Creating knowledge graph enhanced AFP orchestrator
+2025-03-16 09:26:30,082 [WARNING] kg_comparison: Knowledge Graph components not available. Creating mock KG orchestrator.
+2025-03-16 09:26:30,082 [INFO] kg_comparison: Creating standard AFP orchestrator
+2025-03-16 09:26:30,082 [INFO] kg_comparison: Creating agents for AFP orchestrator
+2025-03-16 09:26:30,082 [INFO] kg_comparison: AFP Initialized - Standard: Real, KG-Enhanced: Real
+2025-03-16 09:26:30,082 [INFO] kg_comparison: KG Optimizations: Disabled, Enhanced Extraction: Disabled
+2025-03-16 09:26:30,082 [INFO] kg_comparison: Running benchmark with custom query: Explain how artificial intelligence, machine learning, and deep learning are related to each other
+2025-03-16 09:26:30,082 [INFO] kg_comparison: Starting benchmark with 1 runs per query
+2025-03-16 09:26:30,083 [INFO] kg_comparison: Running benchmark for query 1/1: Explain how artificial intelligence, machine learn...
+2025-03-16 09:26:30,083 [INFO] kg_comparison:   Run 1/1
+2025-03-16 09:26:30,684 [INFO] kg_comparison:   Standard AFP: 0.6008s total, 0.1007s overhead
+2025-03-16 09:26:31,486 [INFO] kg_comparison:   KG AFP: 0.8017s total, 0.3013s overhead
+2025-03-16 09:26:31,486 [INFO] kg_comparison: Query 1 summary:
+2025-03-16 09:26:31,486 [INFO] kg_comparison:   Standard AFP avg: 0.6008s total, 0.1007s overhead
+2025-03-16 09:26:31,486 [INFO] kg_comparison:   KG AFP avg: 0.8017s total, 0.3013s overhead
+2025-03-16 09:26:37,011 [WARNING] kg_comparison: Could not import real Moya components. Using mock classes instead.
+2025-03-16 09:26:37,011 [WARNING] kg_comparison: Skipping Knowledge Graph imports since base components are not available.
+2025-03-16 09:26:37,021 [INFO] kg_comparison: Initialized directories: kg_comparison_results
+2025-03-16 09:26:37,021 [INFO] kg_comparison: Creating standard AFP orchestrator
+2025-03-16 09:26:37,021 [INFO] kg_comparison: Creating agents for AFP orchestrator
+2025-03-16 09:26:37,021 [INFO] kg_comparison: Creating knowledge graph enhanced AFP orchestrator
+2025-03-16 09:26:37,021 [WARNING] kg_comparison: Knowledge Graph components not available. Creating mock KG orchestrator.
+2025-03-16 09:26:37,021 [INFO] kg_comparison: Creating standard AFP orchestrator
+2025-03-16 09:26:37,021 [INFO] kg_comparison: Creating agents for AFP orchestrator
+2025-03-16 09:26:37,021 [INFO] kg_comparison: AFP Initialized - Standard: Real, KG-Enhanced: Real
+2025-03-16 09:26:37,021 [INFO] kg_comparison: KG Optimizations: Disabled, Enhanced Extraction: Disabled
+2025-03-16 09:26:37,021 [INFO] kg_comparison: Running benchmark with custom query: Compare AI, ML, and deep learning
+2025-03-16 09:26:37,021 [INFO] kg_comparison: Starting benchmark with 1 runs per query
+2025-03-16 09:26:37,021 [INFO] kg_comparison: Running benchmark for query 1/1: Compare AI, ML, and deep learning...
+2025-03-16 09:26:37,022 [INFO] kg_comparison:   Run 1/1
+2025-03-16 09:26:37,623 [INFO] kg_comparison:   Standard AFP: 0.6009s total, 0.1005s overhead
+2025-03-16 09:26:38,425 [INFO] kg_comparison:   KG AFP: 0.8014s total, 0.3009s overhead
+2025-03-16 09:26:38,425 [INFO] kg_comparison: Query 1 summary:
+2025-03-16 09:26:38,425 [INFO] kg_comparison:   Standard AFP avg: 0.6009s total, 0.1005s overhead
+2025-03-16 09:26:38,425 [INFO] kg_comparison:   KG AFP avg: 0.8014s total, 0.3009s overhead
+2025-03-16 09:26:59,217 [WARNING] kg_comparison: Could not import real Moya components. Using mock classes instead.
+2025-03-16 09:26:59,218 [WARNING] kg_comparison: Skipping Knowledge Graph imports since base components are not available.
+2025-03-16 09:26:59,226 [INFO] kg_comparison: Initialized directories: kg_comparison_results
+2025-03-16 09:26:59,227 [INFO] kg_comparison: Creating standard AFP orchestrator
+2025-03-16 09:26:59,227 [INFO] kg_comparison: Creating agents for AFP orchestrator
+2025-03-16 09:26:59,227 [INFO] kg_comparison: Creating knowledge graph enhanced AFP orchestrator
+2025-03-16 09:26:59,227 [WARNING] kg_comparison: Knowledge Graph components not available. Creating mock KG orchestrator.
+2025-03-16 09:26:59,228 [INFO] kg_comparison: Creating standard AFP orchestrator
+2025-03-16 09:26:59,228 [INFO] kg_comparison: Creating agents for AFP orchestrator
+2025-03-16 09:26:59,228 [INFO] kg_comparison: AFP Initialized - Standard: Real, KG-Enhanced: Real
+2025-03-16 09:26:59,228 [INFO] kg_comparison: KG Optimizations: Disabled, Enhanced Extraction: Disabled
+2025-03-16 09:26:59,229 [INFO] kg_comparison: Seed-only mode: Seeding knowledge graph and exiting
+2025-03-16 09:26:59,229 [INFO] kg_comparison: Seeding knowledge graph for thread 7f8fc9b6-a547-40a9-96c3-a2d077659768
+2025-03-16 09:26:59,229 [INFO] kg_comparison: Added 16 seed triplets to the knowledge graph
+2025-03-16 09:28:57,544 [WARNING] kg_comparison: Could not import real Moya components. Using mock classes instead.
+2025-03-16 09:28:57,545 [WARNING] kg_comparison: Skipping Knowledge Graph imports since base components are not available.
+2025-03-16 09:28:57,556 [INFO] kg_comparison: Initialized directories: kg_comparison_results
+2025-03-16 09:28:57,556 [INFO] kg_comparison: Creating standard AFP orchestrator
+2025-03-16 09:28:57,556 [INFO] kg_comparison: Creating agents for AFP orchestrator
+2025-03-16 09:28:57,557 [INFO] kg_comparison: Creating knowledge graph enhanced AFP orchestrator
+2025-03-16 09:28:57,557 [WARNING] kg_comparison: Knowledge Graph components not available. Creating mock KG orchestrator.
+2025-03-16 09:28:57,557 [INFO] kg_comparison: Creating standard AFP orchestrator
+2025-03-16 09:28:57,557 [INFO] kg_comparison: Creating agents for AFP orchestrator
+2025-03-16 09:28:57,558 [INFO] kg_comparison: AFP Initialized - Standard: Real, KG-Enhanced: Real
+2025-03-16 09:28:57,558 [INFO] kg_comparison: KG Optimizations: Disabled, Enhanced Extraction: Disabled
+2025-03-16 09:28:57,558 [INFO] kg_comparison: Running benchmark with custom query: Compare AI, ML, and deep learning
+2025-03-16 09:28:57,558 [INFO] kg_comparison: Starting benchmark with 1 runs per query
+2025-03-16 09:28:57,558 [INFO] kg_comparison: Running benchmark for query 1/1: Compare AI, ML, and deep learning...
+2025-03-16 09:28:57,558 [INFO] kg_comparison:   Run 1/1
+2025-03-16 09:28:58,160 [INFO] kg_comparison:   Standard AFP: 0.6010s total, 0.1006s overhead
+2025-03-16 09:28:58,961 [INFO] kg_comparison:   KG AFP: 0.8016s total, 0.3013s overhead
+2025-03-16 09:28:58,961 [INFO] kg_comparison: Query 1 summary:
+2025-03-16 09:28:58,961 [INFO] kg_comparison:   Standard AFP avg: 0.6010s total, 0.1006s overhead
+2025-03-16 09:28:58,961 [INFO] kg_comparison:   KG AFP avg: 0.8016s total, 0.3013s overhead
+2025-03-16 09:29:10,364 [WARNING] kg_comparison: Could not import real Moya components. Using mock classes instead.
+2025-03-16 09:29:10,364 [WARNING] kg_comparison: Skipping Knowledge Graph imports since base components are not available.
+2025-03-16 09:29:10,372 [INFO] kg_comparison: Initialized directories: kg_comparison_results
+2025-03-16 09:29:10,372 [INFO] kg_comparison: Creating standard AFP orchestrator
+2025-03-16 09:29:10,372 [INFO] kg_comparison: Creating agents for AFP orchestrator
+2025-03-16 09:29:10,373 [INFO] kg_comparison: Creating knowledge graph enhanced AFP orchestrator
+2025-03-16 09:29:10,373 [WARNING] kg_comparison: Knowledge Graph components not available. Creating mock KG orchestrator.
+2025-03-16 09:29:10,373 [INFO] kg_comparison: Creating standard AFP orchestrator
+2025-03-16 09:29:10,373 [INFO] kg_comparison: Creating agents for AFP orchestrator
+2025-03-16 09:29:10,373 [INFO] kg_comparison: AFP Initialized - Standard: Real, KG-Enhanced: Real
+2025-03-16 09:29:10,373 [INFO] kg_comparison: KG Optimizations: Disabled, Enhanced Extraction: Disabled
+2025-03-16 09:29:10,373 [INFO] kg_comparison: Seed-only mode: Seeding knowledge graph and exiting
+2025-03-16 09:29:10,373 [INFO] kg_comparison: Seeding knowledge graph for thread 2334e986-7d28-456e-bfdb-25030fdaaadb
+2025-03-16 09:29:10,373 [INFO] kg_comparison: Added 16 seed triplets to the knowledge graph
+2025-03-16 09:29:27,738 [WARNING] kg_comparison: Could not import real Moya components. Using mock classes instead.
+2025-03-16 09:29:27,738 [WARNING] kg_comparison: Skipping Knowledge Graph imports since base components are not available.
+2025-03-16 09:29:27,746 [INFO] kg_comparison: Initialized directories: kg_comparison_results
+2025-03-16 09:29:27,746 [INFO] kg_comparison: Creating standard AFP orchestrator
+2025-03-16 09:29:27,746 [INFO] kg_comparison: Creating agents for AFP orchestrator
+2025-03-16 09:29:27,746 [INFO] kg_comparison: Creating knowledge graph enhanced AFP orchestrator
+2025-03-16 09:29:27,746 [WARNING] kg_comparison: Knowledge Graph components not available. Creating mock KG orchestrator.
+2025-03-16 09:29:27,746 [INFO] kg_comparison: Creating standard AFP orchestrator
+2025-03-16 09:29:27,747 [INFO] kg_comparison: Creating agents for AFP orchestrator
+2025-03-16 09:29:27,747 [INFO] kg_comparison: AFP Initialized - Standard: Real, KG-Enhanced: Real
+2025-03-16 09:29:27,747 [INFO] kg_comparison: KG Optimizations: Disabled, Enhanced Extraction: Disabled
+2025-03-16 09:29:27,747 [INFO] kg_comparison: Running benchmark with custom query: How is deep learning used in AI and what are its capabilities?
+2025-03-16 09:29:27,747 [INFO] kg_comparison: Starting benchmark with 1 runs per query
+2025-03-16 09:29:27,747 [INFO] kg_comparison: Running benchmark for query 1/1: How is deep learning used in AI and what are its c...
+2025-03-16 09:29:27,747 [INFO] kg_comparison:   Run 1/1
+2025-03-16 09:29:28,348 [INFO] kg_comparison:   Standard AFP: 0.6015s total, 0.1010s overhead
+2025-03-16 09:29:29,150 [INFO] kg_comparison:   KG AFP: 0.8016s total, 0.3010s overhead
+2025-03-16 09:29:29,150 [INFO] kg_comparison: Query 1 summary:
+2025-03-16 09:29:29,150 [INFO] kg_comparison:   Standard AFP avg: 0.6015s total, 0.1010s overhead
+2025-03-16 09:29:29,150 [INFO] kg_comparison:   KG AFP avg: 0.8016s total, 0.3010s overhead
+2025-03-16 09:29:52,801 [WARNING] kg_comparison: Could not import real Moya components. Using mock classes instead.
+2025-03-16 09:29:52,802 [WARNING] kg_comparison: Skipping Knowledge Graph imports since base components are not available.
+2025-03-16 09:29:52,811 [INFO] kg_comparison: Initialized directories: kg_comparison_results
+2025-03-16 09:29:52,811 [INFO] kg_comparison: Creating standard AFP orchestrator
+2025-03-16 09:29:52,812 [INFO] kg_comparison: Creating agents for AFP orchestrator
+2025-03-16 09:29:52,812 [INFO] kg_comparison: Creating knowledge graph enhanced AFP orchestrator
+2025-03-16 09:29:52,812 [WARNING] kg_comparison: Knowledge Graph components not available. Creating mock KG orchestrator.
+2025-03-16 09:29:52,812 [INFO] kg_comparison: Creating standard AFP orchestrator
+2025-03-16 09:29:52,812 [INFO] kg_comparison: Creating agents for AFP orchestrator
+2025-03-16 09:29:52,813 [INFO] kg_comparison: AFP Initialized - Standard: Real, KG-Enhanced: Real
+2025-03-16 09:29:52,813 [INFO] kg_comparison: KG Optimizations: Disabled, Enhanced Extraction: Disabled
+2025-03-16 09:29:52,813 [INFO] kg_comparison: Running benchmark with custom query: How does AI use deep learning?
+2025-03-16 09:29:52,813 [INFO] kg_comparison: Starting benchmark with 1 runs per query
+2025-03-16 09:29:52,813 [INFO] kg_comparison: Running benchmark for query 1/1: How does AI use deep learning?...
+2025-03-16 09:29:52,814 [INFO] kg_comparison:   Run 1/1
+2025-03-16 09:29:53,415 [INFO] kg_comparison:   Standard AFP: 0.6011s total, 0.1005s overhead
+2025-03-16 09:29:54,217 [INFO] kg_comparison:   KG AFP: 0.8023s total, 0.3019s overhead
+2025-03-16 09:29:54,217 [INFO] kg_comparison: Query 1 summary:
+2025-03-16 09:29:54,218 [INFO] kg_comparison:   Standard AFP avg: 0.6011s total, 0.1005s overhead
+2025-03-16 09:29:54,218 [INFO] kg_comparison:   KG AFP avg: 0.8023s total, 0.3019s overhead
+2025-03-16 09:43:40,821 [WARNING] kg_comparison: Could not import real Moya components. Using mock classes instead.
+2025-03-16 09:43:40,821 [WARNING] kg_comparison: Skipping Knowledge Graph imports since base components are not available.

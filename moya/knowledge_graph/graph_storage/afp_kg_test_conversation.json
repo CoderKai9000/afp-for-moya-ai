@@ -1,0 +1,164 @@
+{
+  "nodes": [
+    {
+      "id": "english_agent",
+      "data": {
+        "type": "entity",
+        "last_updated": 1742091327.401367
+      }
+    },
+    {
+      "id": "user",
+      "data": {
+        "type": "entity",
+        "last_updated": 1742091442.9764059
+      }
+    },
+    {
+      "id": "spanish_agent",
+      "data": {
+        "type": "entity",
+        "last_updated": 1742091351.2532616
+      }
+    },
+    {
+      "id": "bhaskar",
+      "data": {
+        "type": "entity",
+        "last_updated": 1742091383.9359303
+      }
+    },
+    {
+      "id": "[spanish_agent]",
+      "data": {
+        "type": "entity",
+        "last_updated": 1742091375.0257385
+      }
+    },
+    {
+      "id": "bien",
+      "data": {
+        "type": "entity",
+        "last_updated": 1742091375.0257385
+      }
+    },
+    {
+      "id": "t\u00fa",
+      "data": {
+        "type": "entity",
+        "last_updated": 1742091375.0257385
+      }
+    },
+    {
+      "id": "your name",
+      "data": {
+        "type": "entity",
+        "last_updated": 1742091383.9359303
+      }
+    },
+    {
+      "id": "itikela",
+      "data": {
+        "type": "entity",
+        "last_updated": 1742091442.9764059
+      }
+    },
+    {
+      "id": "bhaskar itikela",
+      "data": {
+        "type": "entity",
+        "last_updated": 1742091465.382877
+      }
+    },
+    {
+      "id": "full name",
+      "data": {
+        "type": "entity",
+        "last_updated": 1742091465.382877
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "english_agent",
+      "target": "user",
+      "data": {
+        "relations": [
+          "assist"
+        ],
+        "last_updated": 1742091327.401367
+      }
+    },
+    {
+      "source": "user",
+      "target": "spanish_agent",
+      "data": {
+        "relations": [
+          "interact"
+        ],
+        "last_updated": 1742091351.2532616
+      }
+    },
+    {
+      "source": "user",
+      "target": "itikela",
+      "data": {
+        "relations": [
+          "second name"
+        ],
+        "last_updated": 1742091442.9764059
+      }
+    },
+    {
+      "source": "bhaskar",
+      "target": "bhaskar",
+      "data": {
+        "relations": [
+          "name is"
+        ],
+        "last_updated": 1742091359.6931918
+      }
+    },
+    {
+      "source": "bhaskar",
+      "target": "your name",
+      "data": {
+        "relations": [
+          "is"
+        ],
+        "last_updated": 1742091383.9359303
+      }
+    },
+    {
+      "source": "[spanish_agent]",
+      "target": "bien",
+      "data": {
+        "relations": [
+          "is"
+        ],
+        "last_updated": 1742091375.0257385
+      }
+    },
+    {
+      "source": "[spanish_agent]",
+      "target": "t\u00fa",
+      "data": {
+        "relations": [
+          "asks",
+          "can help"
+        ],
+        "last_updated": 1742091375.0257385
+      }
+    },
+    {
+      "source": "bhaskar itikela",
+      "target": "full name",
+      "data": {
+        "relations": [
+          "is"
+        ],
+        "last_updated": 1742091465.382877
+      }
+    }
+  ]
+}

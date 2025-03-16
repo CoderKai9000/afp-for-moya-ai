@@ -1,0 +1,119 @@
+{
+  "timestamp": "2025-03-16 09:51:10",
+  "queries": [
+    "Tell me about Microsoft Azure and its main services for AI development"
+  ],
+  "runs_per_query": 3,
+  "standard_afp": {
+    "responses": [],
+    "timings": []
+  },
+  "kg_afp": {
+    "responses": [],
+    "timings": []
+  },
+  "kg_stats": {
+    "entities": 0,
+    "relationships": 0
+  },
+  "query_results": [
+    {
+      "query": "Tell me about Microsoft Azure and its main services for AI development",
+      "standard_timings": [
+        {
+          "total_time": 0.5001492500305176,
+          "overhead_time": 0.1,
+          "api_time": 0.4001492500305176
+        },
+        {
+          "total_time": 0.500861406326294,
+          "overhead_time": 0.1,
+          "api_time": 0.40086140632629397
+        },
+        {
+          "total_time": 0.5013551712036133,
+          "overhead_time": 0.1,
+          "api_time": 0.4013551712036133
+        }
+      ],
+      "kg_timings": [
+        {
+          "total_time": 0.7012054920196533,
+          "overhead_time": 0.3,
+          "api_time": 0.40120549201965333
+        },
+        {
+          "total_time": 0.7006337642669678,
+          "overhead_time": 0.3,
+          "api_time": 0.4006337642669678
+        },
+        {
+          "total_time": 0.700843095779419,
+          "overhead_time": 0.3,
+          "api_time": 0.40084309577941896
+        }
+      ],
+      "standard_response": "Mock response from Standard AFP: Tell me about Microsoft Azure and its main service...",
+      "kg_response": {
+        "response": "Mock KG-enhanced response: Tell me about Microsoft Azure and its main service... Entities: ['AI']",
+        "agent_name": "mock_kg_agent",
+        "knowledge_graph": {
+          "extracted_entities": [
+            "AI"
+          ],
+          "context_enriched": true
+        }
+      },
+      "kg_stats": {
+        "entities": 0,
+        "relationships": 0
+      }
+    }
+  ],
+  "analysis": {
+    "summary": {
+      "standard_afp": {
+        "avg_total_time": 0.5007886091868082,
+        "avg_overhead_time": 0.10000000000000002,
+        "avg_api_time": 0.4007886091868083
+      },
+      "kg_afp": {
+        "avg_total_time": 0.7008941173553467,
+        "avg_overhead_time": 0.3,
+        "avg_api_time": 0.4008941173553467
+      },
+      "comparison": {
+        "total_time_diff": 0.20010550816853845,
+        "total_time_percent": 39.95807901730718,
+        "overhead_diff": 0.19999999999999996,
+        "overhead_percent": 199.99999999999991,
+        "api_time_diff": 0.00010550816853838185,
+        "api_time_percent": 0.02632514151349154
+      }
+    },
+    "query_specific": [
+      {
+        "query": "Tell me about Microsoft Azure and its main services for AI development",
+        "standard_total": 0.5007886091868082,
+        "standard_overhead": 0.10000000000000002,
+        "standard_api": 0.4007886091868083,
+        "kg_total": 0.7008941173553467,
+        "kg_overhead": 0.3,
+        "kg_api": 0.4008941173553467,
+        "total_diff": 0.20010550816853845,
+        "total_percent": 39.95807901730718,
+        "overhead_diff": 0.19999999999999996,
+        "overhead_percent": 199.99999999999991,
+        "api_diff": 0.00010550816853838185,
+        "api_percent": 0.02632514151349154,
+        "entities": 1,
+        "context_enriched": true
+      }
+    ],
+    "recommendations": [
+      "Consider optimizing the knowledge graph for better performance.",
+      "Low cache hit ratio. Consider tuning cache settings or preseeding with more domain knowledge.",
+      "For best results, balance between performance and knowledge graph richness based on your specific use case."
+    ]
+  }
+}

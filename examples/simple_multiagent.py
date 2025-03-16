@@ -14,10 +14,6 @@ from pathlib import Path
 env_path = Path.joinpath(Path(__file__).parent, ".env")
 load_dotenv(env_path)
 
-AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
-AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
-AZURE_OPENAI_API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION")
-
 # Make sure we're using a valid deployment name from the available models
 DEPLOYMENT_NAME = "gpt-4o"  # Use the exact model name from the available models
 

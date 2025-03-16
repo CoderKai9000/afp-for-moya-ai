@@ -1,0 +1,104 @@
+{
+  "timestamp": "2025-03-16T09:26:37.021837",
+  "queries": [
+    "Compare AI, ML, and deep learning"
+  ],
+  "runs_per_query": 1,
+  "standard_afp": {
+    "total_times": [
+      0.6009035110473633
+    ],
+    "overhead_times": [
+      0.10052227973937988
+    ],
+    "responses": [
+      {
+        "response": "Response from english_agent (mock): Compare AI, ML, and deep learn...",
+        "agent_name": "english_agent"
+      }
+    ]
+  },
+  "kg_afp": {
+    "total_times": [
+      0.8014366626739502
+    ],
+    "overhead_times": [
+      0.3009014129638672
+    ],
+    "responses": [
+      {
+        "response": "Response from english_agent (mock): Compare AI, ML, and deep learn...",
+        "agent_name": "english_agent",
+        "knowledge_graph": {
+          "extracted_entities": [
+            "Compare",
+            "learning"
+          ],
+          "extracted_triplets": [
+            "('Compare', 'related to', 'learning')"
+          ],
+          "context_enriched": true
+        }
+      }
+    ]
+  },
+  "kg_stats": {
+    "benchmark_kg_1742097397": {
+      "entities": 0,
+      "relationships": 0
+    }
+  },
+  "analysis": {
+    "summary": {
+      "standard_afp": {
+        "avg_total_time": 0.6009035110473633,
+        "avg_overhead_time": 0.10052227973937988,
+        "avg_api_time": 0.5003812313079834,
+        "overhead_percentage": 16.728522614915576
+      },
+      "kg_afp": {
+        "avg_total_time": 0.8014366626739502,
+        "avg_overhead_time": 0.3009014129638672,
+        "avg_api_time": 0.500535249710083,
+        "overhead_percentage": 37.54525179318923,
+        "kg_overhead": 0.2003791332244873
+      },
+      "comparison": {
+        "total_time_diff": 0.20053315162658691,
+        "total_time_percent": 33.37193874555026,
+        "overhead_diff": 0.2003791332244873,
+        "overhead_percent": 199.33803107530224,
+        "api_time_diff": 0.00015401840209960938,
+        "api_time_percent": 0.030780211659220173
+      }
+    },
+    "query_specific": [
+      {
+        "query": "Compare AI, ML, and deep learning",
+        "standard_total": 0.6009035110473633,
+        "standard_overhead": 0.10052227973937988,
+        "standard_api": 0.5003812313079834,
+        "kg_total": 0.8014366626739502,
+        "kg_overhead": 0.3009014129638672,
+        "kg_api": 0.500535249710083,
+        "total_diff": 0.20053315162658691,
+        "overhead_diff": 0.2003791332244873,
+        "api_diff": 0.00015401840209960938,
+        "entities_extracted": 2,
+        "triplets_extracted": 1,
+        "context_enriched": true
+      }
+    ],
+    "kg_performance": {
+      "entities": 0,
+      "relationships": 0,
+      "cache_hit_ratio": 0,
+      "avg_overhead_per_entity": 0
+    },
+    "recommendations": [
+      "Consider optimizing the knowledge graph for better performance.",
+      "Low cache hit ratio. Consider tuning cache settings or preseeding with more domain knowledge.",
+      "For best results, balance between performance and knowledge graph richness based on your specific use case."
+    ]
+  }
+}

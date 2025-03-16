@@ -13,15 +13,11 @@ from moya.tools.tool_registry import ToolRegistry
 from moya.communication.afp.message import AFPMessage, ContentType
 from moya.communication.afp.bus import AFPCommunicationBus
 
-# Set default values for Azure OpenAI API if not present in environment
-if not os.getenv("AZURE_OPENAI_API_KEY"):
-    os.environ["AZURE_OPENAI_API_KEY"] = "GKCraQ3njQHy2ESzLrecmyBgQfzjZzOEsz2e9YkIQ9jJ7654kd9zJQQJ99BCACHYHv6XJ3w3AAABACOGobr2"
-
-if not os.getenv("AZURE_OPENAI_ENDPOINT"):
-    os.environ["AZURE_OPENAI_ENDPOINT"] = "https://aoi-iiit-hack-2.openai.azure.com/"
-
-if not os.getenv("AZURE_OPENAI_API_VERSION"):
-    os.environ["AZURE_OPENAI_API_VERSION"] = "2024-03-01-preview"
+# Read .env file for the environment variables
+from dotenv import load_dotenv
+from pathlib import Path
+env_path = Path.joinpath(Path(__file__).parent, ".env")
+load_dotenv(env_path)
 
 # Make sure we're using a valid deployment name from the available models
 DEPLOYMENT_NAME = "gpt-4o"  # Use the exact model name from the available models

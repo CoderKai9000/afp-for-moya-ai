@@ -1,0 +1,105 @@
+{
+  "timestamp": "2025-03-16T09:26:30.083945",
+  "queries": [
+    "Explain how artificial intelligence, machine learning, and deep learning are related to each other"
+  ],
+  "runs_per_query": 1,
+  "standard_afp": {
+    "total_times": [
+      0.6007966995239258
+    ],
+    "overhead_times": [
+      0.10066795349121094
+    ],
+    "responses": [
+      {
+        "response": "Response from english_agent (mock): Explain how artificial intelli...",
+        "agent_name": "english_agent"
+      }
+    ]
+  },
+  "kg_afp": {
+    "total_times": [
+      0.8016681671142578
+    ],
+    "overhead_times": [
+      0.3013479709625244
+    ],
+    "responses": [
+      {
+        "response": "Response from english_agent (mock): Explain how artificial intelli...",
+        "agent_name": "english_agent",
+        "knowledge_graph": {
+          "extracted_entities": [
+            "Explain",
+            "artificial",
+            "intelligence,"
+          ],
+          "extracted_triplets": [
+            "('Explain', 'related to', 'artificial')"
+          ],
+          "context_enriched": true
+        }
+      }
+    ]
+  },
+  "kg_stats": {
+    "benchmark_kg_1742097390": {
+      "entities": 0,
+      "relationships": 0
+    }
+  },
+  "analysis": {
+    "summary": {
+      "standard_afp": {
+        "avg_total_time": 0.6007966995239258,
+        "avg_overhead_time": 0.10066795349121094,
+        "avg_api_time": 0.5001287460327148,
+        "overhead_percentage": 16.755743427182722
+      },
+      "kg_afp": {
+        "avg_total_time": 0.8016681671142578,
+        "avg_overhead_time": 0.3013479709625244,
+        "avg_api_time": 0.5003201961517334,
+        "overhead_percentage": 37.590113132130234,
+        "kg_overhead": 0.20068001747131348
+      },
+      "comparison": {
+        "total_time_diff": 0.20087146759033203,
+        "total_time_percent": 33.434182935675835,
+        "overhead_diff": 0.20068001747131348,
+        "overhead_percent": 199.3484624566589,
+        "api_time_diff": 0.0001914501190185547,
+        "api_time_percent": 0.038280166964454264
+      }
+    },
+    "query_specific": [
+      {
+        "query": "Explain how artificial intelligence, machine learning, and deep learning are related to each other",
+        "standard_total": 0.6007966995239258,
+        "standard_overhead": 0.10066795349121094,
+        "standard_api": 0.5001287460327148,
+        "kg_total": 0.8016681671142578,
+        "kg_overhead": 0.3013479709625244,
+        "kg_api": 0.5003201961517334,
+        "total_diff": 0.20087146759033203,
+        "overhead_diff": 0.20068001747131348,
+        "api_diff": 0.0001914501190185547,
+        "entities_extracted": 3,
+        "triplets_extracted": 1,
+        "context_enriched": true
+      }
+    ],
+    "kg_performance": {
+      "entities": 0,
+      "relationships": 0,
+      "cache_hit_ratio": 0,
+      "avg_overhead_per_entity": 0
+    },
+    "recommendations": [
+      "Consider optimizing the knowledge graph for better performance.",
+      "Low cache hit ratio. Consider tuning cache settings or preseeding with more domain knowledge.",
+      "For best results, balance between performance and knowledge graph richness based on your specific use case."
+    ]
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "timestamp": "2025-03-16 09:52:29",
+  "queries": [
+    "Tell me about Microsoft Azure and its main services for AI development",
+    "How do neural networks work? Explain the concept of backpropagation",
+    "What are the key differences between Python and JavaScript programming languages?"
+  ],
+  "runs_per_query": 3,
+  "standard_afp": {
+    "responses": [],
+    "timings": []
+  },
+  "kg_afp": {
+    "responses": [],
+    "timings": []
+  },
+  "kg_stats": {
+    "entities": 0,
+    "relationships": 0
+  },
+  "query_results": [
+    {
+      "query": "Tell me about Microsoft Azure and its main services for AI development",
+      "standard_timings": [
+        {
+          "total_time": 0.5005559921264648,
+          "overhead_time": 0.1,
+          "api_time": 0.40055599212646487
+        },
+        {
+          "total_time": 0.5008633136749268,
+          "overhead_time": 0.1,
+          "api_time": 0.4008633136749268
+        },
+        {
+          "total_time": 0.5012111663818359,
+          "overhead_time": 0.1,
+          "api_time": 0.40121116638183596
+        }
+      ],
+      "kg_timings": [
+        {
+          "total_time": 0.7006969451904297,
+          "overhead_time": 0.3,
+          "api_time": 0.4006969451904297
+        },
+        {
+          "total_time": 0.7008559703826904,
+          "overhead_time": 0.3,
+          "api_time": 0.40085597038269044
+        },
+        {
+          "total_time": 0.7011470794677734,
+          "overhead_time": 0.3,
+          "api_time": 0.40114707946777345
+        }
+      ],
+      "standard_response": "Mock response from Standard AFP: Tell me about Microsoft Azure and its main service...",
+      "kg_response": {
+        "response": "Mock KG-enhanced response: Tell me about Microsoft Azure and its main service... Entities: ['AI']",
+        "agent_name": "mock_kg_agent",
+        "knowledge_graph": {
+          "extracted_entities": [
+            "AI"
+          ],
+          "context_enriched": true
+        }
+      },
+      "kg_stats": {
+        "entities": 0,
+        "relationships": 0
+      }
+    },
+    {
+      "query": "How do neural networks work? Explain the concept of backpropagation",
+      "standard_timings": [
+        {
+          "total_time": 0.500652551651001,
+          "overhead_time": 0.1,
+          "api_time": 0.400652551651001
+        },
+        {
+          "total_time": 0.5011134147644043,
+          "overhead_time": 0.1,
+          "api_time": 0.4011134147644043
+        },
+        {
+          "total_time": 0.5008149147033691,
+          "overhead_time": 0.1,
+          "api_time": 0.40081491470336916
+        }
+      ],
+      "kg_timings": [
+        {
+          "total_time": 0.7012920379638672,
+          "overhead_time": 0.3,
+          "api_time": 0.4012920379638672
+        },
+        {
+          "total_time": 0.7005553245544434,
+          "overhead_time": 0.3,
+          "api_time": 0.40055532455444337
+        },
+        {
+          "total_time": 0.7010068893432617,
+          "overhead_time": 0.3,
+          "api_time": 0.40100688934326173
+        }
+      ],
+      "standard_response": "Mock response from Standard AFP: How do neural networks work? Explain the concept o...",
+      "kg_response": {
+        "response": "Mock KG-enhanced response: How do neural networks work? Explain the concept o... Entities: ['AI', 'Neural Network']",
+        "agent_name": "mock_kg_agent",
+        "knowledge_graph": {
+          "extracted_entities": [
+            "AI",
+            "Neural Network"
+          ],
+          "context_enriched": true
+        }
+      },
+      "kg_stats": {
+        "entities": 0,
+        "relationships": 0
+      }
+    },
+    {
+      "query": "What are the key differences between Python and JavaScript programming languages?",
+      "standard_timings": [
+        {
+          "total_time": 0.5014779567718506,
+          "overhead_time": 0.1,
+          "api_time": 0.4014779567718506
+        },
+        {
+          "total_time": 0.5003564357757568,
+          "overhead_time": 0.1,
+          "api_time": 0.40035643577575686
+        },
+        {
+          "total_time": 0.5003485679626465,
+          "overhead_time": 0.1,
+          "api_time": 0.4003485679626465
+        }
+      ],
+      "kg_timings": [
+        {
+          "total_time": 0.7011594772338867,
+          "overhead_time": 0.3,
+          "api_time": 0.40115947723388673
+        },
+        {
+          "total_time": 0.7006409168243408,
+          "overhead_time": 0.3,
+          "api_time": 0.40064091682434083
+        },
+        {
+          "total_time": 0.7005596160888672,
+          "overhead_time": 0.3,
+          "api_time": 0.4005596160888672
+        }
+      ],
+      "standard_response": "Mock response from Standard AFP: What are the key differences between Python and Ja...",
+      "kg_response": {
+        "response": "Mock KG-enhanced response: What are the key differences between Python and Ja... Entities: ['Python', 'JavaScript', 'Java']",
+        "agent_name": "mock_kg_agent",
+        "knowledge_graph": {
+          "extracted_entities": [
+            "Python",
+            "JavaScript",
+            "Java"
+          ],
+          "context_enriched": true
+        }
+      },
+      "kg_stats": {
+        "entities": 0,
+        "relationships": 0
+      }
+    }
+  ],
+  "analysis": {
+    "summary": {
+      "standard_afp": {
+        "avg_total_time": 0.500821590423584,
+        "avg_overhead_time": 0.10000000000000002,
+        "avg_api_time": 0.40082159042358406
+      },
+      "kg_afp": {
+        "avg_total_time": 0.7008793618943957,
+        "avg_overhead_time": 0.3,
+        "avg_api_time": 0.4008793618943957
+      },
+      "comparison": {
+        "total_time_diff": 0.20005777147081172,
+        "total_time_percent": 39.94591593018328,
+        "overhead_diff": 0.19999999999999996,
+        "overhead_percent": 199.99999999999991,
+        "api_time_diff": 5.777147081165168e-05,
+        "api_time_percent": 0.014413263205357624
+      }
+    },
+    "query_specific": [
+      {
+        "query": "Tell me about Microsoft Azure and its main services for AI development",
+        "standard_total": 0.5008768240610758,
+        "standard_overhead": 0.10000000000000002,
+        "standard_api": 0.4008768240610759,
+        "kg_total": 0.7008999983469645,
+        "kg_overhead": 0.3,
+        "kg_api": 0.40089999834696455,
+        "total_diff": 0.20002317428588867,
+        "total_percent": 39.93460361454023,
+        "overhead_diff": 0.19999999999999996,
+        "overhead_percent": 199.99999999999991,
+        "api_diff": 2.3174285888660773e-05,
+        "api_percent": 0.005780899392959179,
+        "entities": 1,
+        "context_enriched": true
+      },
+      {
+        "query": "How do neural networks work? Explain the concept of backpropagation",
+        "standard_total": 0.5008602937062582,
+        "standard_overhead": 0.10000000000000002,
+        "standard_api": 0.4008602937062582,
+        "kg_total": 0.7009514172871908,
+        "kg_overhead": 0.3,
+        "kg_api": 0.4009514172871908,
+        "total_diff": 0.20009112358093262,
+        "total_percent": 39.94948812977396,
+        "overhead_diff": 0.19999999999999996,
+        "overhead_percent": 199.99999999999991,
+        "api_diff": 9.112358093260609e-05,
+        "api_percent": 0.02273200473164835,
+        "entities": 2,
+        "context_enriched": true
+      },
+      {
+        "query": "What are the key differences between Python and JavaScript programming languages?",
+        "standard_total": 0.500727653503418,
+        "standard_overhead": 0.10000000000000002,
+        "standard_api": 0.40072765350341805,
+        "kg_total": 0.7007866700490316,
+        "kg_overhead": 0.3,
+        "kg_api": 0.4007866700490316,
+        "total_diff": 0.20005901654561364,
+        "total_percent": 39.95365847000261,
+        "overhead_diff": 0.19999999999999996,
+        "overhead_percent": 199.99999999999991,
+        "api_diff": 5.9016545613577165e-05,
+        "api_percent": 0.014727345392217555,
+        "entities": 3,
+        "context_enriched": true
+      }
+    ],
+    "recommendations": [
+      "Consider optimizing the knowledge graph for better performance.",
+      "Low cache hit ratio. Consider tuning cache settings or preseeding with more domain knowledge.",
+      "For best results, balance between performance and knowledge graph richness based on your specific use case."
+    ]
+  }
+}

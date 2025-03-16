@@ -1,0 +1,22 @@
+
+        MultiAgent Performance Comparison Summary
+        =========================================
+        
+        Sequential Test Results (INCLUDING API Time):
+        Standard MultiAgent - Avg Response Time: 3.2545 seconds
+        AFP MultiAgent - Avg Response Time: 3.1722 seconds
+        Response Time Improvement: 2.53%
+        
+        Standard MultiAgent - Throughput: 0.31 messages/second
+        AFP MultiAgent - Throughput: 0.32 messages/second
+        Throughput Improvement: 2.60%
+        
+        Framework Overhead Only (EXCLUDING API Time):
+        Standard MultiAgent - Avg Framework Overhead: 2.6005 seconds
+        AFP MultiAgent - Avg Framework Overhead: 0.0005 seconds
+        Framework Overhead Improvement: 99.98%
+        
+        Standard MultiAgent - Framework Throughput: 0.38 messages/second
+        AFP MultiAgent - Framework Throughput: 964.69 messages/second
+        Framework Throughput Improvement: 250816.41%
+        

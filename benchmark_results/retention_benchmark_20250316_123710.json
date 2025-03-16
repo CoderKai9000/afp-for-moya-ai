@@ -1,0 +1,413 @@
+{
+  "analysis": {
+    "timestamp": "2025-03-16 12:37:10",
+    "conversations": 15,
+    "key_topics_analyzed": 23,
+    "topic_mentions": {
+      "standard": {},
+      "kg": {},
+      "direct": {}
+    },
+    "retention_scores": {
+      "standard": 0.0,
+      "kg": 0.0,
+      "improvement": 0.0
+    },
+    "entity_analysis": {
+      "standard_avg": 0.0,
+      "kg_avg": 1.2,
+      "standard_progression": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "kg_progression": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        2,
+        1,
+        1,
+        0,
+        1,
+        2,
+        2,
+        2,
+        3,
+        1
+      ]
+    },
+    "response_lengths": {
+      "standard": 38,
+      "kg": 38,
+      "direct": 38
+    }
+  },
+  "standard_result": {
+    "responses": [
+      {
+        "turn": 1,
+        "query": "What is artificial intelligence and how does it differ from traditional programming?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.8610193729400635,
+        "entities": [],
+        "tokens": 0
+      },
+      {
+        "turn": 2,
+        "query": "Can you explain how machine learning algorithms learn from data?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.29918861389160156,
+        "entities": [],
+        "tokens": 0
+      },
+      {
+        "turn": 3,
+        "query": "What's the difference between supervised and unsupervised learning?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.4374215602874756,
+        "entities": [],
+        "tokens": 0
+      },
+      {
+        "turn": 4,
+        "query": "How do neural networks process information?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.3106687068939209,
+        "entities": [],
+        "tokens": 0
+      },
+      {
+        "turn": 5,
+        "query": "What are transformer models and how have they advanced natural language processing?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.30256009101867676,
+        "entities": [],
+        "tokens": 0
+      },
+      {
+        "turn": 6,
+        "query": "How is deep learning being applied in computer vision applications?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.3103170394897461,
+        "entities": [],
+        "tokens": 0
+      },
+      {
+        "turn": 7,
+        "query": "How are businesses using AI for customer service automation?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.3066980838775635,
+        "entities": [],
+        "tokens": 0
+      },
+      {
+        "turn": 8,
+        "query": "What industries have seen the biggest impact from machine learning applications?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.328765869140625,
+        "entities": [],
+        "tokens": 0
+      },
+      {
+        "turn": 9,
+        "query": "How is predictive analytics changing business decision making?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.3062317371368408,
+        "entities": [],
+        "tokens": 0
+      },
+      {
+        "turn": 10,
+        "query": "Can you explain how recommendation systems work for e-commerce?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.3505585193634033,
+        "entities": [],
+        "tokens": 0
+      },
+      {
+        "turn": 11,
+        "query": "What are some ethical concerns with widespread AI adoption?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.2953305244445801,
+        "entities": [],
+        "tokens": 0
+      },
+      {
+        "turn": 12,
+        "query": "How can bias in machine learning datasets affect AI systems?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.29724597930908203,
+        "entities": [],
+        "tokens": 0
+      },
+      {
+        "turn": 13,
+        "query": "What regulations are being developed for AI governance?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.30789947509765625,
+        "entities": [],
+        "tokens": 0
+      },
+      {
+        "turn": 14,
+        "query": "How is explainable AI addressing the black box problem in neural networks?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.31381964683532715,
+        "entities": [],
+        "tokens": 0
+      },
+      {
+        "turn": 15,
+        "query": "How might quantum computing affect AI development?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.30512046813964844,
+        "entities": [],
+        "tokens": 0
+      }
+    ],
+    "final_query": "Based on our previous discussions: How might the ethical concerns around bias in AI, the applications of deep learning in computer vision, and the potential of quantum computing collectively influence the future development of artificial general intelligence? Please reference specific concepts we've discussed about machine learning approaches, industry applications, and technological limitations in your answer.",
+    "final_response": "Error: API call failed with status 401",
+    "final_time": 0.30719542503356934,
+    "final_entities": [],
+    "entity_progression": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "thread_id": "5491b3b7-159b-41f7-9f26-c293ebd71601",
+    "tokens": 0
+  },
+  "kg_result": {
+    "responses": [
+      {
+        "turn": 1,
+        "query": "What is artificial intelligence and how does it differ from traditional programming?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.30191874504089355,
+        "entities": [],
+        "tokens": 0
+      },
+      {
+        "turn": 2,
+        "query": "Can you explain how machine learning algorithms learn from data?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.30150508880615234,
+        "entities": [
+          "AI",
+          "Machine Learning"
+        ],
+        "tokens": 0
+      },
+      {
+        "turn": 3,
+        "query": "What's the difference between supervised and unsupervised learning?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.7721271514892578,
+        "entities": [],
+        "tokens": 0
+      },
+      {
+        "turn": 4,
+        "query": "How do neural networks process information?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.29340100288391113,
+        "entities": [
+          "Neural Network"
+        ],
+        "tokens": 0
+      },
+      {
+        "turn": 5,
+        "query": "What are transformer models and how have they advanced natural language processing?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.3065979480743408,
+        "entities": [],
+        "tokens": 0
+      },
+      {
+        "turn": 6,
+        "query": "How is deep learning being applied in computer vision applications?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.2997298240661621,
+        "entities": [
+          "Deep Learning",
+          "Java"
+        ],
+        "tokens": 0
+      },
+      {
+        "turn": 7,
+        "query": "How are businesses using AI for customer service automation?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.3197500705718994,
+        "entities": [
+          "AI"
+        ],
+        "tokens": 0
+      },
+      {
+        "turn": 8,
+        "query": "What industries have seen the biggest impact from machine learning applications?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.3316020965576172,
+        "entities": [
+          "Machine Learning"
+        ],
+        "tokens": 0
+      },
+      {
+        "turn": 9,
+        "query": "How is predictive analytics changing business decision making?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.31744384765625,
+        "entities": [],
+        "tokens": 0
+      },
+      {
+        "turn": 10,
+        "query": "Can you explain how recommendation systems work for e-commerce?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.29498887062072754,
+        "entities": [
+          "AI"
+        ],
+        "tokens": 0
+      },
+      {
+        "turn": 11,
+        "query": "What are some ethical concerns with widespread AI adoption?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.31246352195739746,
+        "entities": [
+          "AI",
+          "JavaScript"
+        ],
+        "tokens": 0
+      },
+      {
+        "turn": 12,
+        "query": "How can bias in machine learning datasets affect AI systems?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.3094136714935303,
+        "entities": [
+          "AI",
+          "Machine Learning"
+        ],
+        "tokens": 0
+      },
+      {
+        "turn": 13,
+        "query": "What regulations are being developed for AI governance?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.31023311614990234,
+        "entities": [
+          "AI",
+          "C++"
+        ],
+        "tokens": 0
+      },
+      {
+        "turn": 14,
+        "query": "How is explainable AI addressing the black box problem in neural networks?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.2986781597137451,
+        "entities": [
+          "AI",
+          "Neural Network",
+          "Deep Learning"
+        ],
+        "tokens": 0
+      },
+      {
+        "turn": 15,
+        "query": "How might quantum computing affect AI development?",
+        "response": "Error: API call failed with status 401",
+        "time": 0.3018665313720703,
+        "entities": [
+          "AI"
+        ],
+        "tokens": 0
+      }
+    ],
+    "final_query": "Based on our previous discussions: How might the ethical concerns around bias in AI, the applications of deep learning in computer vision, and the potential of quantum computing collectively influence the future development of artificial general intelligence? Please reference specific concepts we've discussed about machine learning approaches, industry applications, and technological limitations in your answer.",
+    "final_response": "Error: API call failed with status 401",
+    "final_time": 0.3037283420562744,
+    "final_entities": [
+      "AI",
+      "Machine Learning",
+      "Deep Learning"
+    ],
+    "entity_progression": [
+      0,
+      2,
+      0,
+      1,
+      0,
+      2,
+      1,
+      1,
+      0,
+      1,
+      2,
+      2,
+      2,
+      3,
+      1
+    ],
+    "thread_id": "8fe5e9f3-1412-416c-9ade-1297667dfcee",
+    "tokens": 0
+  },
+  "direct_result": {
+    "query": "Based on our previous discussions: How might the ethical concerns around bias in AI, the applications of deep learning in computer vision, and the potential of quantum computing collectively influence the future development of artificial general intelligence? Please reference specific concepts we've discussed about machine learning approaches, industry applications, and technological limitations in your answer.",
+    "response": "Error: API call failed with status 401",
+    "time": 0.56048583984375,
+    "entities": [],
+    "thread_id": "d3dff9da-d9fe-45f5-9eb5-516cf705a927",
+    "tokens": 0
+  },
+  "conversations": [
+    "What is artificial intelligence and how does it differ from traditional programming?",
+    "Can you explain how machine learning algorithms learn from data?",
+    "What's the difference between supervised and unsupervised learning?",
+    "How do neural networks process information?",
+    "What are transformer models and how have they advanced natural language processing?",
+    "How is deep learning being applied in computer vision applications?",
+    "How are businesses using AI for customer service automation?",
+    "What industries have seen the biggest impact from machine learning applications?",
+    "How is predictive analytics changing business decision making?",
+    "Can you explain how recommendation systems work for e-commerce?",
+    "What are some ethical concerns with widespread AI adoption?",
+    "How can bias in machine learning datasets affect AI systems?",
+    "What regulations are being developed for AI governance?",
+    "How is explainable AI addressing the black box problem in neural networks?",
+    "How might quantum computing affect AI development?"
+  ],
+  "test_prompt": "Based on our previous discussions: How might the ethical concerns around bias in AI, the applications of deep learning in computer vision, and the potential of quantum computing collectively influence the future development of artificial general intelligence? Please reference specific concepts we've discussed about machine learning approaches, industry applications, and technological limitations in your answer."
+}

@@ -1,0 +1,388 @@
+{
+  "analysis": {
+    "timestamp": "2025-03-16 12:21:50",
+    "conversations": 15,
+    "key_topics_analyzed": 23,
+    "topic_mentions": {
+      "standard": {},
+      "kg": {
+        "machine learning": 1,
+        "deep learning": 1
+      },
+      "direct": {}
+    },
+    "retention_scores": {
+      "standard": 0.0,
+      "kg": 0.0,
+      "improvement": 0.0
+    },
+    "entity_analysis": {
+      "standard_avg": 0.0,
+      "kg_avg": 1.4,
+      "standard_progression": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "kg_progression": [
+        1,
+        2,
+        1,
+        1,
+        0,
+        1,
+        2,
+        1,
+        0,
+        2,
+        1,
+        2,
+        2,
+        3,
+        2
+      ]
+    },
+    "response_lengths": {
+      "standard": 86,
+      "kg": 134,
+      "direct": 86
+    }
+  },
+  "standard_result": {
+    "responses": [
+      {
+        "turn": 1,
+        "query": "What is artificial intelligence and how does it differ from traditional programming?",
+        "response": "Mock response from Standard AFP: What is artificial intelligence and how does it di...",
+        "time": 0.5010299682617188,
+        "entities": []
+      },
+      {
+        "turn": 2,
+        "query": "Can you explain how machine learning algorithms learn from data?",
+        "response": "Mock response from Standard AFP: Can you explain how machine learning algorithms le...",
+        "time": 0.5005760192871094,
+        "entities": []
+      },
+      {
+        "turn": 3,
+        "query": "What's the difference between supervised and unsupervised learning?",
+        "response": "Mock response from Standard AFP: What's the difference between supervised and unsup...",
+        "time": 0.501105546951294,
+        "entities": []
+      },
+      {
+        "turn": 4,
+        "query": "How do neural networks process information?",
+        "response": "Mock response from Standard AFP: How do neural networks process information?...",
+        "time": 0.5008754730224609,
+        "entities": []
+      },
+      {
+        "turn": 5,
+        "query": "What are transformer models and how have they advanced natural language processing?",
+        "response": "Mock response from Standard AFP: What are transformer models and how have they adva...",
+        "time": 0.5009963512420654,
+        "entities": []
+      },
+      {
+        "turn": 6,
+        "query": "How is deep learning being applied in computer vision applications?",
+        "response": "Mock response from Standard AFP: How is deep learning being applied in computer vis...",
+        "time": 0.5013248920440674,
+        "entities": []
+      },
+      {
+        "turn": 7,
+        "query": "How are businesses using AI for customer service automation?",
+        "response": "Mock response from Standard AFP: How are businesses using AI for customer service a...",
+        "time": 0.5009765625,
+        "entities": []
+      },
+      {
+        "turn": 8,
+        "query": "What industries have seen the biggest impact from machine learning applications?",
+        "response": "Mock response from Standard AFP: What industries have seen the biggest impact from ...",
+        "time": 0.5006022453308105,
+        "entities": []
+      },
+      {
+        "turn": 9,
+        "query": "How is predictive analytics changing business decision making?",
+        "response": "Mock response from Standard AFP: How is predictive analytics changing business deci...",
+        "time": 0.5010175704956055,
+        "entities": []
+      },
+      {
+        "turn": 10,
+        "query": "Can you explain how recommendation systems work for e-commerce?",
+        "response": "Mock response from Standard AFP: Can you explain how recommendation systems work fo...",
+        "time": 0.5008184909820557,
+        "entities": []
+      },
+      {
+        "turn": 11,
+        "query": "What are some ethical concerns with widespread AI adoption?",
+        "response": "Mock response from Standard AFP: What are some ethical concerns with widespread AI ...",
+        "time": 0.500462532043457,
+        "entities": []
+      },
+      {
+        "turn": 12,
+        "query": "How can bias in machine learning datasets affect AI systems?",
+        "response": "Mock response from Standard AFP: How can bias in machine learning datasets affect A...",
+        "time": 0.500180721282959,
+        "entities": []
+      },
+      {
+        "turn": 13,
+        "query": "What regulations are being developed for AI governance?",
+        "response": "Mock response from Standard AFP: What regulations are being developed for AI govern...",
+        "time": 0.5007603168487549,
+        "entities": []
+      },
+      {
+        "turn": 14,
+        "query": "How is explainable AI addressing the black box problem in neural networks?",
+        "response": "Mock response from Standard AFP: How is explainable AI addressing the black box pro...",
+        "time": 0.5008339881896973,
+        "entities": []
+      },
+      {
+        "turn": 15,
+        "query": "How might quantum computing affect AI development?",
+        "response": "Mock response from Standard AFP: How might quantum computing affect AI development?...",
+        "time": 0.5007753372192383,
+        "entities": []
+      }
+    ],
+    "final_query": "Based on our previous discussions: How might the ethical concerns around bias in AI, the applications of deep learning in computer vision, and the potential of quantum computing collectively influence the future development of artificial general intelligence? Please reference specific concepts we've discussed about machine learning approaches, industry applications, and technological limitations in your answer.",
+    "final_response": "Mock response from Standard AFP: Based on our previous discussions: How might the e...",
+    "final_time": 0.50067138671875,
+    "final_entities": [],
+    "entity_progression": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "thread_id": "85a348c6-e3f4-4691-a335-6d76003e9608"
+  },
+  "kg_result": {
+    "responses": [
+      {
+        "turn": 1,
+        "query": "What is artificial intelligence and how does it differ from traditional programming?",
+        "response": "Mock KG-enhanced response: What is artificial intelligence and how does it di... Entities: ['AI']",
+        "time": 0.7012901306152344,
+        "entities": [
+          "AI"
+        ]
+      },
+      {
+        "turn": 2,
+        "query": "Can you explain how machine learning algorithms learn from data?",
+        "response": "Mock KG-enhanced response: Can you explain how machine learning algorithms le... Entities: ['AI', 'Machine Learning']",
+        "time": 0.7014694213867188,
+        "entities": [
+          "AI",
+          "Machine Learning"
+        ]
+      },
+      {
+        "turn": 3,
+        "query": "What's the difference between supervised and unsupervised learning?",
+        "response": "Mock KG-enhanced response: What's the difference between supervised and unsup... Entities: ['Java']",
+        "time": 0.7007355690002441,
+        "entities": [
+          "Java"
+        ]
+      },
+      {
+        "turn": 4,
+        "query": "How do neural networks process information?",
+        "response": "Mock KG-enhanced response: How do neural networks process information?... Entities: ['Neural Network']",
+        "time": 0.7018594741821289,
+        "entities": [
+          "Neural Network"
+        ]
+      },
+      {
+        "turn": 5,
+        "query": "What are transformer models and how have they advanced natural language processing?",
+        "response": "Mock KG-enhanced response: What are transformer models and how have they adva... Entities: []",
+        "time": 0.7010748386383057,
+        "entities": []
+      },
+      {
+        "turn": 6,
+        "query": "How is deep learning being applied in computer vision applications?",
+        "response": "Mock KG-enhanced response: How is deep learning being applied in computer vis... Entities: ['Deep Learning']",
+        "time": 0.7007701396942139,
+        "entities": [
+          "Deep Learning"
+        ]
+      },
+      {
+        "turn": 7,
+        "query": "How are businesses using AI for customer service automation?",
+        "response": "Mock KG-enhanced response: How are businesses using AI for customer service a... Entities: ['AI', 'C++']",
+        "time": 0.701542854309082,
+        "entities": [
+          "AI",
+          "C++"
+        ]
+      },
+      {
+        "turn": 8,
+        "query": "What industries have seen the biggest impact from machine learning applications?",
+        "response": "Mock KG-enhanced response: What industries have seen the biggest impact from ... Entities: ['Machine Learning']",
+        "time": 0.7023284435272217,
+        "entities": [
+          "Machine Learning"
+        ]
+      },
+      {
+        "turn": 9,
+        "query": "How is predictive analytics changing business decision making?",
+        "response": "Mock KG-enhanced response: How is predictive analytics changing business deci... Entities: []",
+        "time": 0.7008609771728516,
+        "entities": []
+      },
+      {
+        "turn": 10,
+        "query": "Can you explain how recommendation systems work for e-commerce?",
+        "response": "Mock KG-enhanced response: Can you explain how recommendation systems work fo... Entities: ['AI', 'Neural Network']",
+        "time": 0.7016618251800537,
+        "entities": [
+          "AI",
+          "Neural Network"
+        ]
+      },
+      {
+        "turn": 11,
+        "query": "What are some ethical concerns with widespread AI adoption?",
+        "response": "Mock KG-enhanced response: What are some ethical concerns with widespread AI ... Entities: ['AI']",
+        "time": 0.7008144855499268,
+        "entities": [
+          "AI"
+        ]
+      },
+      {
+        "turn": 12,
+        "query": "How can bias in machine learning datasets affect AI systems?",
+        "response": "Mock KG-enhanced response: How can bias in machine learning datasets affect A... Entities: ['AI', 'Machine Learning']",
+        "time": 0.701204776763916,
+        "entities": [
+          "AI",
+          "Machine Learning"
+        ]
+      },
+      {
+        "turn": 13,
+        "query": "What regulations are being developed for AI governance?",
+        "response": "Mock KG-enhanced response: What regulations are being developed for AI govern... Entities: ['AI', 'Python']",
+        "time": 0.701244592666626,
+        "entities": [
+          "AI",
+          "Python"
+        ]
+      },
+      {
+        "turn": 14,
+        "query": "How is explainable AI addressing the black box problem in neural networks?",
+        "response": "Mock KG-enhanced response: How is explainable AI addressing the black box pro... Entities: ['AI', 'Neural Network', 'Deep Learning']",
+        "time": 0.702092170715332,
+        "entities": [
+          "AI",
+          "Neural Network",
+          "Deep Learning"
+        ]
+      },
+      {
+        "turn": 15,
+        "query": "How might quantum computing affect AI development?",
+        "response": "Mock KG-enhanced response: How might quantum computing affect AI development?... Entities: ['AI', 'JavaScript']",
+        "time": 0.7014806270599365,
+        "entities": [
+          "AI",
+          "JavaScript"
+        ]
+      }
+    ],
+    "final_query": "Based on our previous discussions: How might the ethical concerns around bias in AI, the applications of deep learning in computer vision, and the potential of quantum computing collectively influence the future development of artificial general intelligence? Please reference specific concepts we've discussed about machine learning approaches, industry applications, and technological limitations in your answer.",
+    "final_response": "Mock KG-enhanced response: Based on our previous discussions: How might the e... Entities: ['AI', 'Machine Learning', 'Deep Learning']",
+    "final_time": 0.7008979320526123,
+    "final_entities": [
+      "AI",
+      "Machine Learning",
+      "Deep Learning"
+    ],
+    "entity_progression": [
+      1,
+      2,
+      1,
+      1,
+      0,
+      1,
+      2,
+      1,
+      0,
+      2,
+      1,
+      2,
+      2,
+      3,
+      2
+    ],
+    "thread_id": "7855fe7b-88c0-4c5c-9b65-279f5cc132ac"
+  },
+  "direct_result": {
+    "query": "Based on our previous discussions: How might the ethical concerns around bias in AI, the applications of deep learning in computer vision, and the potential of quantum computing collectively influence the future development of artificial general intelligence? Please reference specific concepts we've discussed about machine learning approaches, industry applications, and technological limitations in your answer.",
+    "response": "Mock response from Standard AFP: Based on our previous discussions: How might the e...",
+    "time": 0.5008220672607422,
+    "entities": [],
+    "thread_id": "af5aa333-da35-4d10-9426-856a3afe025f"
+  },
+  "conversations": [
+    "What is artificial intelligence and how does it differ from traditional programming?",
+    "Can you explain how machine learning algorithms learn from data?",
+    "What's the difference between supervised and unsupervised learning?",
+    "How do neural networks process information?",
+    "What are transformer models and how have they advanced natural language processing?",
+    "How is deep learning being applied in computer vision applications?",
+    "How are businesses using AI for customer service automation?",
+    "What industries have seen the biggest impact from machine learning applications?",
+    "How is predictive analytics changing business decision making?",
+    "Can you explain how recommendation systems work for e-commerce?",
+    "What are some ethical concerns with widespread AI adoption?",
+    "How can bias in machine learning datasets affect AI systems?",
+    "What regulations are being developed for AI governance?",
+    "How is explainable AI addressing the black box problem in neural networks?",
+    "How might quantum computing affect AI development?"
+  ],
+  "test_prompt": "Based on our previous discussions: How might the ethical concerns around bias in AI, the applications of deep learning in computer vision, and the potential of quantum computing collectively influence the future development of artificial general intelligence? Please reference specific concepts we've discussed about machine learning approaches, industry applications, and technological limitations in your answer."
+}

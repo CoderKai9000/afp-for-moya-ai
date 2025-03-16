@@ -1,0 +1,73 @@
+{
+  "system_info": {
+    "platform": "Windows-11-10.0.26100-SP0",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "python_version": "3.12.3"
+  },
+  "sequential_tests": {
+    "with_api_time": {
+      "simple": {
+        "response_times": [
+          2.5487606525421143,
+          2.0938289165496826,
+          6.226293087005615,
+          2.121709108352661,
+          4.989077806472778,
+          1.547624111175537
+        ],
+        "avg_response_time": 3.254548947016398,
+        "total_time": 19.530293941497803,
+        "throughput": 0.3072150382361246
+      },
+      "afp": {
+        "response_times": [
+          2.230354070663452,
+          1.9495010375976562,
+          6.606061697006226,
+          2.181562662124634,
+          4.275720596313477,
+          1.7899212837219238
+        ],
+        "avg_response_time": 3.1721868912378945,
+        "total_time": 19.03621530532837,
+        "throughput": 0.3151887023635711
+      },
+      "improvements": {
+        "response_time_percent": 2.53067497583678,
+        "throughput_percent": 2.5954667366634423
+      }
+    },
+    "framework_overhead_only": {
+      "simple": {
+        "overhead_times": [
+          1.3789212703704834,
+          1.6704051494598389,
+          5.797152519226074,
+          1.0352416038513184,
+          4.58547043800354,
+          1.1358695030212402
+        ],
+        "avg_overhead_time": 2.600510080655416,
+        "total_overhead_time": 15.60606074333191,
+        "overhead_throughput": 0.38446601603570296
+      },
+      "afp": {
+        "overhead_times": [
+          0.0008378028869628906,
+          0.0,
+          0.0,
+          0.000762939453125,
+          0.0015249252319335938,
+          0.0
+        ],
+        "avg_overhead_time": 0.0005209445953369141,
+        "total_overhead_time": 0.006219625473022461,
+        "overhead_throughput": 964.6883121861464
+      },
+      "improvements": {
+        "overhead_time_percent": 99.97996759946396,
+        "overhead_throughput_percent": 250816.40663932226
+      }
+    }
+  }
+}

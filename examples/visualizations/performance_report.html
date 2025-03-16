@@ -1,0 +1,113 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>MultiAgent Performance Comparison Report</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 20px; }
+                h1, h2, h3 { color: #333; }
+                table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+                th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+                th { background-color: #f2f2f2; }
+                tr:nth-child(even) { background-color: #f9f9f9; }
+                .improvement { color: green; font-weight: bold; }
+                .section { margin-bottom: 30px; }
+                .visualization { margin: 20px 0; text-align: center; }
+                img { max-width: 100%; height: auto; border: 1px solid #ddd; }
+            </style>
+        </head>
+        <body>
+            <h1>MultiAgent Performance Comparison Report</h1>
+            
+            <div class="section">
+                <h2>System Information</h2>
+                <table>
+                    <tr><th>Metric</th><th>Value</th></tr>
+                    <tr><td>Test Date</td><td>2025-03-16 15:14:23</td></tr>
+                    <tr><td>Number of Test Cases</td><td>0</td></tr>
+                </table>
+            </div>
+            
+            <div class="section">
+                <h2>Sequential Test Results (INCLUDING API Time)</h2>
+                <table>
+                    <tr>
+                        <th>Implementation</th>
+                        <th>Avg Response Time (s)</th>
+                        <th>Throughput (msg/s)</th>
+                    </tr>
+                    <tr>
+                        <td>Standard MultiAgent</td>
+                        <td>3.2545</td>
+                        <td>0.31</td>
+                    </tr>
+                    <tr>
+                        <td>AFP MultiAgent</td>
+                        <td>3.1722</td>
+                        <td>0.32</td>
+                    </tr>
+                    <tr>
+                        <td>Improvement</td>
+                        <td class="improvement">2.53%</td>
+                        <td class="improvement">2.60%</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="section">
+                <h2>Framework Overhead (EXCLUDING API Time)</h2>
+                <table>
+                    <tr>
+                        <th>Implementation</th>
+                        <th>Avg Framework Overhead (s)</th>
+                        <th>Framework Throughput (msg/s)</th>
+                    </tr>
+                    <tr>
+                        <td>Standard MultiAgent</td>
+                        <td>2.6005</td>
+                        <td>0.38</td>
+                    </tr>
+                    <tr>
+                        <td>AFP MultiAgent</td>
+                        <td>0.0005</td>
+                        <td>964.69</td>
+                    </tr>
+                    <tr>
+                        <td>Improvement</td>
+                        <td class="improvement">99.98%</td>
+                        <td class="improvement">250816.41%</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="section">
+                <h2>Performance Visualizations</h2>
+                
+                <div class="visualization">
+                    <h3>Response Time Comparison</h3>
+                    <img src="response_time_comparison.png" alt="Response Time Comparison">
+                </div>
+                
+                <div class="visualization">
+                    <h3>Framework Overhead Comparison</h3>
+                    <img src="framework_overhead_comparison.png" alt="Framework Overhead Comparison">
+                </div>
+                
+                <div class="visualization">
+                    <h3>Message Count Comparison</h3>
+                    <img src="message_count_comparison.png" alt="Message Count Comparison">
+                </div>
+                
+                <div class="visualization">
+                    <h3>Agent Processing Time Comparison</h3>
+                    <img src="agent_processing_time_comparison.png" alt="Agent Processing Time Comparison">
+                </div>
+                
+                <div class="visualization">
+                    <h3>Classification Time Comparison</h3>
+                    <img src="classification_time_comparison.png" alt="Classification Time Comparison">
+                </div>
+            </div>
+        </body>
+        </html>
+        

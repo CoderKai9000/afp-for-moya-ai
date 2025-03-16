@@ -1,0 +1,70 @@
+{
+  "query": "Tell me about Python and machine learning",
+  "extracted_entities": [
+    "Python",
+    "machine learning"
+  ],
+  "context": [
+    {
+      "subject": "Python",
+      "predicate": "created_by",
+      "object": "Guido van Rossum"
+    },
+    {
+      "subject": "Python",
+      "predicate": "used_for",
+      "object": "machine learning"
+    },
+    {
+      "subject": "Python",
+      "predicate": "has_library",
+      "object": "NumPy"
+    },
+    {
+      "subject": "Python",
+      "predicate": "has_library",
+      "object": "pandas"
+    },
+    {
+      "subject": "Python",
+      "predicate": "has_library",
+      "object": "scikit-learn"
+    },
+    {
+      "subject": "TensorFlow",
+      "predicate": "used_with",
+      "object": "Python"
+    },
+    {
+      "subject": "NumPy",
+      "predicate": "used_with",
+      "object": "Python"
+    },
+    {
+      "subject": "pandas",
+      "predicate": "used_with",
+      "object": "Python"
+    },
+    {
+      "subject": "machine learning",
+      "predicate": "includes",
+      "object": "deep learning"
+    },
+    {
+      "subject": "Python",
+      "predicate": "used_for",
+      "object": "machine learning"
+    },
+    {
+      "subject": "data science",
+      "predicate": "uses",
+      "object": "machine learning"
+    },
+    {
+      "subject": "scikit-learn",
+      "predicate": "used_for",
+      "object": "machine learning"
+    }
+  ],
+  "time_taken": 0.0010018348693847656
+}

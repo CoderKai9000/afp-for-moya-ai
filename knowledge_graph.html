@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 750px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"font": {"color": "#333333"}, "group": 4, "id": "NeuroSynth", "label": "NeuroSynth", "shape": "dot", "size": 10, "title": "NeuroSynth (Organizations)"}, {"font": {"color": "#333333"}, "group": 2, "id": "Healthcare AI", "label": "Healthcare AI", "shape": "dot", "size": 10, "title": "Healthcare AI (Healthcare)"}, {"font": {"color": "#333333"}, "group": 1, "id": "Machine Learning", "label": "Machine Learning", "shape": "dot", "size": 10, "title": "Machine Learning (AI Concepts)"}, {"font": {"color": "#333333"}, "group": 3, "id": "Ethical AI", "label": "Ethical AI", "shape": "dot", "size": 10, "title": "Ethical AI (Ethics \u0026 Regulation)"}, {"font": {"color": "#333333"}, "group": 4, "id": "IBM Watson", "label": "IBM Watson", "shape": "dot", "size": 10, "title": "IBM Watson (Organizations)"}, {"font": {"color": "#333333"}, "group": 4, "id": "Google Health", "label": "Google Health", "shape": "dot", "size": 10, "title": "Google Health (Organizations)"}, {"font": {"color": "#333333"}, "group": 3, "id": "HIPAA", "label": "HIPAA", "shape": "dot", "size": 10, "title": "HIPAA (Ethics \u0026 Regulation)"}, {"font": {"color": "#333333"}, "group": 3, "id": "FDA Approval", "label": "FDA Approval", "shape": "dot", "size": 10, "title": "FDA Approval (Ethics \u0026 Regulation)"}, {"font": {"color": "#333333"}, "group": 2, "id": "Medical Imaging", "label": "Medical Imaging", "shape": "dot", "size": 10, "title": "Medical Imaging (Healthcare)"}, {"font": {"color": "#333333"}, "group": 2, "id": "Electronic Health Records", "label": "Electronic Health Records", "shape": "dot", "size": 10, "title": "Electronic Health Records (Healthcare)"}, {"font": {"color": "#333333"}, "group": 1, "id": "Federated Learning", "label": "Federated Learning", "shape": "dot", "size": 10, "title": "Federated Learning (AI Concepts)"}, {"font": {"color": "#333333"}, "group": 1, "id": "Transformer Models", "label": "Transformer Models", "shape": "dot", "size": 10, "title": "Transformer Models (AI Concepts)"}, {"font": {"color": "#333333"}, "group": 2, "id": "Diagnostic Tools", "label": "Diagnostic Tools", "shape": "dot", "size": 10, "title": "Diagnostic Tools (Healthcare)"}, {"font": {"color": "#333333"}, "group": 1, "id": "Neural Networks", "label": "Neural Networks", "shape": "dot", "size": 10, "title": "Neural Networks (AI Concepts)"}, {"font": {"color": "#333333"}, "group": 3, "id": "Bias", "label": "Bias", "shape": "dot", "size": 10, "title": "Bias (Ethics \u0026 Regulation)"}, {"font": {"color": "#333333"}, "group": 2, "id": "Clinical Validation", "label": "Clinical Validation", "shape": "dot", "size": 10, "title": "Clinical Validation (Healthcare)"}, {"font": {"color": "#333333"}, "group": 2, "id": "Personalized Medicine", "label": "Personalized Medicine", "shape": "dot", "size": 10, "title": "Personalized Medicine (Healthcare)"}, {"font": {"color": "#333333"}, "group": 3, "id": "Data Privacy", "label": "Data Privacy", "shape": "dot", "size": 10, "title": "Data Privacy (Ethics \u0026 Regulation)"}, {"font": {"color": "#333333"}, "group": 2, "id": "Telemedicine", "label": "Telemedicine", "shape": "dot", "size": 10, "title": "Telemedicine (Healthcare)"}, {"font": {"color": "#333333"}, "group": 1, "id": "Deep Learning", "label": "Deep Learning", "shape": "dot", "size": 10, "title": "Deep Learning (AI Concepts)"}, {"font": {"color": "#333333"}, "group": 3, "id": "GDPR", "label": "GDPR", "shape": "dot", "size": 10, "title": "GDPR (Ethics \u0026 Regulation)"}, {"font": {"color": "#333333"}, "group": 1, "id": "AI", "label": "AI", "shape": "dot", "size": 10, "title": "AI (AI Concepts)"}, {"font": {"color": "#333333"}, "group": 1, "id": "Explainable AI", "label": "Explainable AI", "shape": "dot", "size": 10, "title": "Explainable AI (AI Concepts)"}]);
+                  edges = new vis.DataSet([{"from": "NeuroSynth", "label": "develops", "title": "NeuroSynth develops Healthcare AI", "to": "Healthcare AI", "width": 1}, {"from": "NeuroSynth", "label": "uses", "title": "NeuroSynth uses Machine Learning", "to": "Machine Learning", "width": 1}, {"from": "NeuroSynth", "label": "implements", "title": "NeuroSynth implements Ethical AI", "to": "Ethical AI", "width": 1}, {"from": "NeuroSynth", "label": "competes_with", "title": "NeuroSynth competes_with IBM Watson", "to": "IBM Watson", "width": 1}, {"from": "NeuroSynth", "label": "competes_with", "title": "NeuroSynth competes_with Google Health", "to": "Google Health", "width": 1}, {"from": "NeuroSynth", "label": "requires", "title": "NeuroSynth requires HIPAA", "to": "HIPAA", "width": 1}, {"from": "Healthcare AI", "label": "requires", "title": "Healthcare AI requires FDA Approval", "to": "FDA Approval", "width": 1}, {"from": "Healthcare AI", "label": "is_related_to", "title": "Healthcare AI is_related_to Medical Imaging", "to": "Medical Imaging", "width": 1}, {"from": "Healthcare AI", "label": "analyzes", "title": "Healthcare AI analyzes Electronic Health Records", "to": "Electronic Health Records", "width": 1}, {"from": "Healthcare AI", "label": "is_related_to", "title": "Healthcare AI is_related_to Federated Learning", "to": "Federated Learning", "width": 1}, {"from": "Healthcare AI", "label": "is_a_type_of", "title": "Healthcare AI is_a_type_of Transformer Models", "to": "Transformer Models", "width": 1}, {"from": "Machine Learning", "label": "powers", "title": "Machine Learning powers Diagnostic Tools", "to": "Diagnostic Tools", "width": 1}, {"from": "Machine Learning", "label": "is_used_for", "title": "Machine Learning is_used_for Federated Learning", "to": "Federated Learning", "width": 1}, {"from": "Machine Learning", "label": "is_a_type_of", "title": "Machine Learning is_a_type_of HIPAA", "to": "HIPAA", "width": 1}, {"from": "Machine Learning", "label": "is_related_to", "title": "Machine Learning is_related_to Neural Networks", "to": "Neural Networks", "width": 1}, {"from": "Machine Learning", "label": "is_a_type_of", "title": "Machine Learning is_a_type_of Bias", "to": "Bias", "width": 1}, {"from": "Machine Learning", "label": "is_used_for", "title": "Machine Learning is_used_for Healthcare AI", "to": "Healthcare AI", "width": 1}, {"from": "Machine Learning", "label": "is_a_type_of", "title": "Machine Learning is_a_type_of Clinical Validation", "to": "Clinical Validation", "width": 1}, {"from": "Ethical AI", "label": "requires", "title": "Ethical AI requires Bias", "to": "Bias", "width": 1}, {"from": "Ethical AI", "label": "is_used_for", "title": "Ethical AI is_used_for Personalized Medicine", "to": "Personalized Medicine", "width": 1}, {"from": "Ethical AI", "label": "is_a_type_of", "title": "Ethical AI is_a_type_of Machine Learning", "to": "Machine Learning", "width": 1}, {"from": "FDA Approval", "label": "is_related_to", "title": "FDA Approval is_related_to Data Privacy", "to": "Data Privacy", "width": 1}, {"from": "Medical Imaging", "label": "is_a_type_of", "title": "Medical Imaging is_a_type_of Federated Learning", "to": "Federated Learning", "width": 1}, {"from": "Medical Imaging", "label": "is_related_to", "title": "Medical Imaging is_related_to Ethical AI", "to": "Ethical AI", "width": 1}, {"from": "Electronic Health Records", "label": "requires", "title": "Electronic Health Records requires Telemedicine", "to": "Telemedicine", "width": 1}, {"from": "Electronic Health Records", "label": "addresses", "title": "Electronic Health Records addresses Personalized Medicine", "to": "Personalized Medicine", "width": 1}, {"from": "Electronic Health Records", "label": "is_a_type_of", "title": "Electronic Health Records is_a_type_of Machine Learning", "to": "Machine Learning", "width": 1}, {"from": "Diagnostic Tools", "label": "is_a_type_of", "title": "Diagnostic Tools is_a_type_of IBM Watson", "to": "IBM Watson", "width": 1}, {"from": "Diagnostic Tools", "label": "requires", "title": "Diagnostic Tools requires FDA Approval", "to": "FDA Approval", "width": 1}, {"from": "Diagnostic Tools", "label": "is_regulated_by", "title": "Diagnostic Tools is_regulated_by Clinical Validation", "to": "Clinical Validation", "width": 1}, {"from": "Deep Learning", "label": "is_a_type_of", "title": "Deep Learning is_a_type_of Machine Learning", "to": "Machine Learning", "width": 1}, {"from": "Neural Networks", "label": "is_used_in", "title": "Neural Networks is_used_in Deep Learning", "to": "Deep Learning", "width": 1}, {"from": "Neural Networks", "label": "is_a_type_of", "title": "Neural Networks is_a_type_of Federated Learning", "to": "Federated Learning", "width": 1}, {"from": "Neural Networks", "label": "is_used_for", "title": "Neural Networks is_used_for Transformer Models", "to": "Transformer Models", "width": 1}, {"from": "Transformer Models", "label": "requires", "title": "Transformer Models requires Electronic Health Records", "to": "Electronic Health Records", "width": 1}, {"from": "Transformer Models", "label": "is_related_to", "title": "Transformer Models is_related_to FDA Approval", "to": "FDA Approval", "width": 1}, {"from": "Data Privacy", "label": "is_regulated_by", "title": "Data Privacy is_regulated_by HIPAA", "to": "HIPAA", "width": 1}, {"from": "Data Privacy", "label": "is_regulated_by", "title": "Data Privacy is_regulated_by GDPR", "to": "GDPR", "width": 1}, {"from": "Data Privacy", "label": "is_related_to", "title": "Data Privacy is_related_to IBM Watson", "to": "IBM Watson", "width": 1}, {"from": "Data Privacy", "label": "requires", "title": "Data Privacy requires Neural Networks", "to": "Neural Networks", "width": 1}, {"from": "HIPAA", "label": "is_used_for", "title": "HIPAA is_used_for IBM Watson", "to": "IBM Watson", "width": 1}, {"from": "HIPAA", "label": "requires", "title": "HIPAA requires AI", "to": "AI", "width": 1}, {"from": "HIPAA", "label": "requires", "title": "HIPAA requires Ethical AI", "to": "Ethical AI", "width": 1}, {"from": "HIPAA", "label": "addresses", "title": "HIPAA addresses Deep Learning", "to": "Deep Learning", "width": 1}, {"from": "GDPR", "label": "is_a_type_of", "title": "GDPR is_a_type_of IBM Watson", "to": "IBM Watson", "width": 1}, {"from": "GDPR", "label": "is_related_to", "title": "GDPR is_related_to AI", "to": "AI", "width": 1}, {"from": "GDPR", "label": "is_used_for", "title": "GDPR is_used_for Telemedicine", "to": "Telemedicine", "width": 1}, {"from": "GDPR", "label": "competes_with", "title": "GDPR competes_with Deep Learning", "to": "Deep Learning", "width": 1}, {"from": "GDPR", "label": "is_used_for", "title": "GDPR is_used_for Google Health", "to": "Google Health", "width": 1}, {"from": "Federated Learning", "label": "enhances", "title": "Federated Learning enhances Data Privacy", "to": "Data Privacy", "width": 1}, {"from": "Federated Learning", "label": "is_a_type_of", "title": "Federated Learning is_a_type_of IBM Watson", "to": "IBM Watson", "width": 1}, {"from": "Federated Learning", "label": "requires", "title": "Federated Learning requires Ethical AI", "to": "Ethical AI", "width": 1}, {"from": "Explainable AI", "label": "addresses", "title": "Explainable AI addresses Bias", "to": "Bias", "width": 1}, {"from": "Explainable AI", "label": "requires", "title": "Explainable AI requires Electronic Health Records", "to": "Electronic Health Records", "width": 1}, {"from": "Explainable AI", "label": "addresses", "title": "Explainable AI addresses Telemedicine", "to": "Telemedicine", "width": 1}, {"from": "Bias", "label": "enhances", "title": "Bias enhances Electronic Health Records", "to": "Electronic Health Records", "width": 1}, {"from": "Bias", "label": "is_related_to", "title": "Bias is_related_to Clinical Validation", "to": "Clinical Validation", "width": 1}, {"from": "IBM Watson", "label": "enhances", "title": "IBM Watson enhances Personalized Medicine", "to": "Personalized Medicine", "width": 1}, {"from": "Google Health", "label": "is_regulated_by", "title": "Google Health is_regulated_by IBM Watson", "to": "IBM Watson", "width": 1}, {"from": "Google Health", "label": "requires", "title": "Google Health requires Neural Networks", "to": "Neural Networks", "width": 1}, {"from": "Google Health", "label": "is_a_type_of", "title": "Google Health is_a_type_of Personalized Medicine", "to": "Personalized Medicine", "width": 1}, {"from": "Clinical Validation", "label": "is_required_for", "title": "Clinical Validation is_required_for FDA Approval", "to": "FDA Approval", "width": 1}, {"from": "Clinical Validation", "label": "competes_with", "title": "Clinical Validation competes_with Telemedicine", "to": "Telemedicine", "width": 1}, {"from": "Clinical Validation", "label": "is_related_to", "title": "Clinical Validation is_related_to Transformer Models", "to": "Transformer Models", "width": 1}, {"from": "Telemedicine", "label": "uses", "title": "Telemedicine uses AI", "to": "AI", "width": 1}, {"from": "Telemedicine", "label": "is_a_type_of", "title": "Telemedicine is_a_type_of HIPAA", "to": "HIPAA", "width": 1}, {"from": "Telemedicine", "label": "is_regulated_by", "title": "Telemedicine is_regulated_by Neural Networks", "to": "Neural Networks", "width": 1}, {"from": "Telemedicine", "label": "is_related_to", "title": "Telemedicine is_related_to Medical Imaging", "to": "Medical Imaging", "width": 1}, {"from": "AI", "label": "is_related_to", "title": "AI is_related_to Data Privacy", "to": "Data Privacy", "width": 1}, {"from": "AI", "label": "is_used_for", "title": "AI is_used_for Deep Learning", "to": "Deep Learning", "width": 1}, {"from": "Personalized Medicine", "label": "is_enhanced_by", "title": "Personalized Medicine is_enhanced_by AI", "to": "AI", "width": 1}, {"from": "Personalized Medicine", "label": "is_related_to", "title": "Personalized Medicine is_related_to NeuroSynth", "to": "NeuroSynth", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"physics": {"solver": "forceAtlas2Based", "forceAtlas2Based": {"gravitationalConstant": -50, "centralGravity": 0.01, "springLength": 100, "springConstant": 0.08}, "stabilization": {"enabled": true, "iterations": 1000}}, "nodes": {"font": {"size": 12, "face": "Tahoma"}, "borderWidth": 2, "shadow": true}, "edges": {"color": {"color": "#aaaaaa", "highlight": "#fd8d3c"}, "font": {"size": 10, "align": "middle"}, "smooth": {"type": "continuous", "forceDirection": "none"}, "arrows": {"to": {"enabled": true, "scaleFactor": 0.5}}, "shadow": true}, "interaction": {"hover": true, "navigationButtons": true, "keyboard": true}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
